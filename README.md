@@ -1,3 +1,5 @@
-# Python library containing scripts by subtopics:
+# GIS Python library containing scripts by subtopics:
 
-1. **gis**: Contain scripts to performs gis operations.
+1. **pygis1**
+1. **pygis2**
+1. **pygis3**
