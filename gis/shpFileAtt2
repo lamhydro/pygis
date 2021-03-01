@@ -1,0 +1,33 @@
+import arcpy
+import shapefile
+
+#shpfile = r'C:\Users\Luis\Downloads\nhn_rhn_05ck000_shp_en\NHN_05CK000_1_0_HD_WATERBODY_2.shp'
+shpfile = r'C:\Users\Luis\Downloads\nhn_rhn_05ck000_shp_en\NHN_05CK000_1_0_HN_NLFLOW_1.shp'
+
+ctr = shapefile.Reader(shpfile)
+
+geomet = ctr.shapeRecords() #will store the geometry separately
+first = geomet[0] #will extract the first polygon to a new object
+first.shape.points #will show you the points of the polygon
+first.record #will show you the attributes
+
+
+shapes = ctr.shapes()
+len(shapes)
+# Each shape record contains the following attributes:
+for name in dir(shapes[3]):
+    if not name.startswith('__'):
+        name
+#'bbox'
+#'parts'
+#'points'
+#'shapeType'
+
+fields = ctr.fields
+
+records = ctr.records()
+records[3][1:3]
+
+# Reading Geometry and Records Simultaneously
+shapeRecs = ctr.shapeRecords()
+shapeRecs[0].record[:]

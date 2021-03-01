@@ -1,0 +1,16 @@
+20131012 821   0     1     0lmm333 C:\Users\lmm333\Dropbox\Public\pyLib\ras83 =  FLOAT (( 1000.0))
+20131012 821   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras84 = REGIONGROUP(C:\Users\lmm333\Dropbox\Public\pyLib\ras82,  #, EIGHT, WITHIN, #, NOLIN
+20131012 821   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras85 =  INT ((E:\RED_DE~1\RiverNet\NHN_RE~1\demprcli  *  C:\Users\lmm333\Dropbox\Public\pyLib\ras83))
+20131012 821   0     0     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras86 = ZONALFILL(C:\Users\lmm333\Dropbox\Public\pyLib\ras84, C:\Users\lmm333\Dropbox\Publi
+20131012 821   0     0     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras87 = (C:\Users\lmm333\Dropbox\Public\pyLib\ras86  /  C:\Users\lmm333\Dropbox\Public\pyLib\ras83)
+20131012 822   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras88 = ISNULL(C:\Users\lmm333\Dropbox\Public\pyLib\ras82)
+20131012 822   0     0     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras810 = RECLASS(C:\Users\lmm333\Dropbox\Public\pyLib\ras88,  c:\users\lmm333\dropbox\public\pylib\rem89, NODATA)
+20131012 822   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras811 = CON(C:\Users\lmm333\Dropbox\Public\pyLib\ras810, E:\RED_DE~1\RiverNet\NHN_RE~1\demprcli, C:\Users\lmm333\Dropbox\Public\pyLib\ras87)
+20131012 829   0     1     0lmm333 C:\Users\lmm333\Dropbox\Public\pyLib\ras03 =  FLOAT (( 1000.0))
+20131012 829   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras04 = REGIONGROUP(C:\Users\lmm333\Dropbox\Public\pyLib\ras02,  #, EIGHT, WITHIN, #, NOLIN
+20131012 829   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras05 =  INT ((E:\RED_DE~1\RiverNet\NHN_RE~1\demprcli  *  C:\Users\lmm333\Dropbox\Public\pyLib\ras03))
+20131012 829   0     0     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras06 = ZONALFILL(C:\Users\lmm333\Dropbox\Public\pyLib\ras04, C:\Users\lmm333\Dropbox\Publi
+20131012 829   0     0     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras07 = (C:\Users\lmm333\Dropbox\Public\pyLib\ras06  /  C:\Users\lmm333\Dropbox\Public\pyLib\ras03)
+20131012 829   0     0     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras08 = ISNULL(C:\Users\lmm333\Dropbox\Public\pyLib\ras02)
+20131012 829   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras010 = RECLASS(C:\Users\lmm333\Dropbox\Public\pyLib\ras08,  c:\users\lmm333\dropbox\public\pylib\rem09, NODATA)
+20131012 829   0     1     0lmm333 c:\users\lmm333\dropbox\public\pylib\ras011 = CON(C:\Users\lmm333\Dropbox\Public\pyLib\ras010, E:\RED_DE~1\RiverNet\NHN_RE~1\demprcli, C:\Users\lmm333\Dropbox\Public\pyLib\ras07)

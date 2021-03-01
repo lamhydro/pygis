@@ -1,0 +1,2324 @@
+Help on module ArcHydroTools:
+
+NAME
+    ArcHydroTools
+
+FILE
+    c:\program files (x86)\esri\waterutils\archydro\bin\archydrotools.py
+
+DESCRIPTION
+    The Arc Hydro Tools toolbox contains a set of public domain utilities developed
+    on top of the Arc Hydro data model. They operate in the ArcGIS environment. Some
+    of the tools require the Spatial Analyst extension.
+
+FUNCTIONS
+    AccumulateIncrementalTimeSeries(in_subwatershed_features=None, in_timeseries_table=None, in_variabledefinition_table=None, tsvarid_source=None, tsvarid_target=None, start_time=None, end_time=None, out_timeseries_table=None)
+        AccumulateIncrementalTimeSeries_archydro(in_subwatershed_features, in_timeseries_table, in_variabledefinition_table, tsvarid_source, tsvarid_target, start_time, end_time, out_timeseries_table)
+        
+        INPUTS:
+         in_subwatershed_features (Feature Layer):
+             Input Subwatershed
+         in_timeseries_table (Table View):
+             Input Time Series Table
+         in_variabledefinition_table (Table View):
+             Input Variable Definition Table
+         tsvarid_source (String):
+             Source Time Series Variable ID
+         tsvarid_target (String):
+             Target Time Series Variable ID
+         start_time (Date):
+             Starting Time [mm/dd/yyyy]
+         end_time (Date):
+             Ending Time [mm/dd/yyyy]
+        
+        OUTPUTS:
+         out_timeseries_table (Table View):
+             Output Target TSTable
+    
+    AddLinearStructureHydroEdgesToPreferentialLink(in_hydroedge_features=None, in_sinkpoint_features=None, in_catchment_features=None, out_preferentialnode_features=None, out_preferentiallink_features=None)
+        AddLinearStructureHydroEdgesToPreferentialLink_archydro(in_hydroedge_features, in_sinkpoint_features, in_catchment_features, out_preferentialnode_features, out_preferentiallink_features)
+        
+        INPUTS:
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_sinkpoint_features (Feature Layer):
+             Input Sink Point
+         in_catchment_features (Feature Layer):
+             Input Catchment
+        
+        OUTPUTS:
+         out_preferentialnode_features (Feature Layer):
+             Output Preferential Node
+         out_preferentiallink_features (Feature Layer):
+             Output Preferential Link
+    
+    AddPointStructureHydroEdgesToPreferentialLink(in_hydrojunction_features=None, in_hydroedge_features=None, in_sinkpoint_features=None, in_catchment_features=None, out_preferentialnode_features=None, out_preferentiallink_features=None, in_hep_features=None)
+        AddPointStructureHydroEdgesToPreferentialLink_archydro(in_hydrojunction_features, in_hydroedge_features, in_sinkpoint_features, in_catchment_features, out_preferentialnode_features, out_preferentiallink_features, {in_hep_features})
+        
+        INPUTS:
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_sinkpoint_features (Feature Layer):
+             Input Sink Point
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_hep_features {Feature Layer}:
+             Input Hydraulic Element Point
+        
+        OUTPUTS:
+         out_preferentialnode_features (Feature Layer):
+             Output Preferential Node
+         out_preferentiallink_features (Feature Layer):
+             Output Preferential Link
+    
+    AdjointCatchment(in_drainageline_features=None, in_catchment_features=None, out_adjoint_features=None)
+        AdjointCatchment_archydro(in_drainageline_features, in_catchment_features, out_adjoint_features)
+        
+        INPUTS:
+         in_drainageline_features (Feature Layer):
+             Input Drainage Line
+         in_catchment_features (Feature Layer):
+             Input Catchment
+        
+        OUTPUTS:
+         out_adjoint_features (Feature Layer):
+             Output Adjoint Catchment
+    
+    AdjustFlowDirectionInStreams(in_flowdir_raster=None, in_streamfdr_raster=None, out_streamadjusted_fdr_raster=None)
+        AdjustFlowDirectionInStreams_archydro(in_flowdir_raster, in_streamfdr_raster, out_streamadjusted_fdr_raster)
+        
+        INPUTS:
+         in_flowdir_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_streamfdr_raster (Raster Layer):
+             Input Stream Flow Direction Grid
+        
+        OUTPUTS:
+         out_streamadjusted_fdr_raster (Raster Layer):
+             Output Stream Adjusted Flow Direction Grid
+    
+    AdjustFlowDirectioninLakes(in_flow_direction_raster=None, in_lake_features=None, in_stream_raster=None, out_bowlflowdirection_raster=None)
+        AdjustFlowDirectioninLakes_archydro(in_flow_direction_raster, in_lake_features, in_stream_raster, out_bowlflowdirection_raster)
+        
+        INPUTS:
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_lake_features (Feature Layer):
+             Input Lake Polygon
+         in_stream_raster (Raster Layer):
+             Input Stream Grid
+        
+        OUTPUTS:
+         out_bowlflowdirection_raster (Raster Layer):
+             Output Bowled Flow Direction Grid
+    
+    AdjustFlowDirectioninSinks(in_flow_direction_raster=None, in_sink_point_raster=None, in_sink_poly_raster=None, out_deranged_flowdirection_raster=None)
+        AdjustFlowDirectioninSinks_archydro(in_flow_direction_raster, in_sink_point_raster, in_sink_poly_raster, out_deranged_flowdirection_raster)
+        
+        INPUTS:
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_sink_point_raster (Raster Layer):
+             Input Sink Point Grid
+         in_sink_poly_raster (Raster Layer):
+             Input Sink Polygon Grid
+        
+        OUTPUTS:
+         out_deranged_flowdirection_raster (Raster Layer):
+             Output Deranged Flow Direction Grid
+    
+    AppendCoastalCatchments(Input_DEM_Grid=None, Input_Catchment_Grid=None, Input_Catchment_Features=None)
+        AppendCoastalCatchments_archydro(Input_DEM_Grid, Input_Catchment_Grid, Input_Catchment_Features)
+        
+           Appends coastal catchments to the existing set of catchments (vector
+           representation).
+        
+        INPUTS:
+         Input_DEM_Grid (Raster Layer):
+             Input DEM grid.
+         Input_Catchment_Grid (Raster Layer):
+             Input catchment grid.
+         Input_Catchment_Features (Feature Layer):
+             Input catchment feature class/layer.
+    
+    AppendCoordinateSystemtoXML(Input_XML_File=None, Input_Coordinate_System=None, Overwrite_Coordinate_System_in_XML=None)
+        AppendCoordinateSystemtoXML_archydro(Input_XML_File, Input_Coordinate_System, Overwrite_Coordinate_System_in_XML)
+        
+        INPUTS:
+         Input_XML_File (File)
+         Input_Coordinate_System (Coordinate System)
+         Overwrite_Coordinate_System_in_XML (Boolean)
+    
+    AssignCatTypeAttribute(Input_Catchment_Features=None, Input_Drainage_Line_Feature_Class=None, Input_Sink_Point_Feature_Class=None)
+        AssignCatTypeAttribute_archydro(Input_Catchment_Features, {Input_Drainage_Line_Feature_Class}, {Input_Sink_Point_Feature_Class})
+        
+           Sets catchment types for the existing set of catchments (populates CatType
+           field).
+        
+        INPUTS:
+         Input_Catchment_Features (Feature Layer):
+             Input catchment feature class/layer.
+         Input_Drainage_Line_Feature_Class {Feature Layer}:
+             Input drainage line feature class/layer. This is an optional input. If the
+             layer is not provided, catchments will not be evaluated for being of "Drainage"
+             type (this can be the case for completely "deranged" terrains where there is no
+             developed stream system and drainage lines are not explicitly modeled).
+         Input_Sink_Point_Feature_Class {Feature Layer}:
+             Input sink point feature class/layer. This is an optional input. If the layer
+             is not provided, catchments will not be evaluated for being of "Sink" type (this
+             can be the case for completely "dendritic" terrains where there are no sinks).
+    
+    AssignHydroID(in_objectclass=None, overwrite=None)
+        AssignHydroID_archydro(in_objectclass, {overwrite})
+        
+        INPUTS:
+         in_objectclass (Table View):
+             Input Feature Class/Table Name
+         overwrite {Boolean}:
+             Overwrite HydroID
+    
+    AssignRiverOrder(inTableName=None, RiverOrder_field=None, RiverOrderType=None, inFSTableName=None)
+        AssignRiverOrder_archydro(inTableName, RiverOrder_field, {RiverOrderType}, {inFSTableName})
+        
+        INPUTS:
+         inTableName (Table View):
+             Input Feature Class/Table Name
+         RiverOrder_field (Field):
+             RiverOrder Field
+         RiverOrderType {String}:
+             River Order Type
+         inFSTableName {Table View}:
+             Flow Split Table
+    
+    AssignStreamSlope(in_stream_features=None, number_start_elevation=None, number_drop_elevation=None)
+        AssignStreamSlope_archydro(in_stream_features, number_start_elevation, number_drop_elevation)
+        
+        INPUTS:
+         in_stream_features (Feature Layer):
+             Input Stream
+         number_start_elevation (Long):
+             High number for starting elevation
+         number_drop_elevation (Long):
+             Elevation drop value
+    
+    AssignUniqueID(in_objectclass=None, uniqueID_field=None, overwrite=None)
+        AssignUniqueID_archydro(in_objectclass, {uniqueID_field}, {overwrite})
+        
+        INPUTS:
+         in_objectclass (Table View):
+             Input Feature Class/Table Name
+         uniqueID_field {Field}:
+             UniqueID Field
+         overwrite {Boolean}:
+             Overwrite UniqueID
+    
+    AssignWatershedID(Geodatabase=None, WatershedName=None, Overwrite_WatershedID=None)
+        AssignWatershedID_archydro(Geodatabase, WatershedName, {Overwrite_WatershedID})
+        
+           For a given workspace, update the value of WatershedID field of all the
+           layer/tables in the workspace. If a layer does not contain the WatershedID
+           field, the field will be added.  If a WatershedName is provided instead of a
+           WatershedID, the code would find the WatershedID based on the specified
+           WatershedName  The tool works with the ApDataExchangeConfig.xml that provide
+           (1) a list of valid WatershedName, and WatershedIDs  (2) a list of
+           layernames/tablenames not participate in the operation  (3) a list of
+           layernames/tablenames that will participate in the operation  <SPAN /> <SPAN />
+        
+        INPUTS:
+         Geodatabase (Workspace):
+             Geodatabase (Workspace) containing the feature classes and tables whose
+             WatershedID field will be updated.
+         WatershedName (String):
+             WatershedName whose corresponding WatershedID will be used to update the
+             WatershedID field of the feature classes/tables of the Geodatabase specified
+             above.
+         Overwrite_WatershedID {Boolean}
+    
+    BasicCombinedTerrainProcessing(DEM=None, Number_of_cells_to_define_stream=None)
+        BasicCombinedTerrainProcessing_archydro(DEM, Number_of_cells_to_define_stream)
+        
+        INPUTS:
+         DEM (Raster Layer)
+         Number_of_cells_to_define_stream (Double)
+    
+    BasicDendriticTerrainProcessing(Fil=None, Number_of_cells_to_define_stream=None)
+        BasicDendriticTerrainProcessing_archydro(Fil, Number_of_cells_to_define_stream)
+        
+        INPUTS:
+         Fil (Raster Layer)
+         Number_of_cells_to_define_stream (Double)
+    
+    BasicDerangedTerrainProcessing(DEM=None)
+        BasicDerangedTerrainProcessing_archydro(DEM)
+        
+        INPUTS:
+         DEM (Raster Layer)
+    
+    BatchGlobalWatershedDelineation(in_batchpoint_features=None, in_cujunction_features=None, in_cuedge_features=None, in_cupolygon_features=None, datapath=None, clear_features=None, out_globalwatershed_features=None, out_globalwatershedpoint_features=None)
+        BatchGlobalWatershedDelineation_archydro(in_batchpoint_features, in_cujunction_features, in_cuedge_features, in_cupolygon_features, datapath, {clear_features}, out_globalwatershed_features, out_globalwatershedpoint_features)
+        
+        INPUTS:
+         in_batchpoint_features (Feature Layer):
+             Input Batch Point
+         in_cujunction_features (Feature Layer):
+             Input Cataloging Unit Junction
+         in_cuedge_features (Feature Layer):
+             Input Cataloging Unit Edge
+         in_cupolygon_features (Feature Layer):
+             Input Cataloging Unit Polygon
+         datapath (Folder):
+             Global Datapath
+         clear_features {Boolean}:
+             Clear Existing Features
+        
+        OUTPUTS:
+         out_globalwatershed_features (Feature Layer):
+             Output Global Watershed
+         out_globalwatershedpoint_features (Feature Layer):
+             Output Global Watershed Point
+    
+    BatchProcessing(in_globaldata_location=None, in_model=None, in_spatialrefgridname=None)
+        BatchProcessing_archydro(in_globaldata_location, in_model, in_spatialrefgridname)
+        
+        INPUTS:
+         in_globaldata_location (Folder):
+             Input Global Data Location
+         in_model (String):
+             Input Model and Command Line Arguments
+         in_spatialrefgridname (String):
+             Input Name of Grid used to set the output Spatial Reference
+    
+    BatchSubwatershedDelineation(in_batchpoint_features=None, in_flow_direction_raster=None, in_stream_raster=None, out_subwatershed_features=None, out_subwatershedpoint_features=None)
+        BatchSubwatershedDelineation_archydro(in_batchpoint_features, in_flow_direction_raster, in_stream_raster, out_subwatershed_features, out_subwatershedpoint_features)
+        
+        INPUTS:
+         in_batchpoint_features (Feature Layer):
+             Input Batch Point
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_stream_raster (Raster Layer):
+             Input Stream Grid
+        
+        OUTPUTS:
+         out_subwatershed_features (Feature Layer):
+             Output Subwatershed
+         out_subwatershedpoint_features (Feature Layer):
+             Output Subwatershed Point
+    
+    BatchWatershedDelineation(in_batchpoint_features=None, in_flow_direction_raster=None, in_stream_raster=None, in_snapstream_raster=None, in_catchment_features=None, in_adjointcatchment_features=None, clear_features=None, out_watershed_features=None, out_watershedpoint_features=None)
+        BatchWatershedDelineation_archydro(in_batchpoint_features, in_flow_direction_raster, in_stream_raster, {in_snapstream_raster}, in_catchment_features, in_adjointcatchment_features, {clear_features}, out_watershed_features, out_watershedpoint_features)
+        
+        INPUTS:
+         in_batchpoint_features (Feature Layer):
+             Input Batch Point
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_stream_raster (Raster Layer):
+             Input Stream Grid
+         in_snapstream_raster {Raster Layer}:
+             Input Snap Stream Grid
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_adjointcatchment_features (Feature Layer):
+             Input Adjoint Catchment
+         clear_features {Boolean}:
+             Clear Existing Features
+        
+        OUTPUTS:
+         out_watershed_features (Feature Layer):
+             Output Watershed
+         out_watershedpoint_features (Feature Layer):
+             Output Watershed Point
+    
+    BatchWatershedDelineationForPolygons(in_batchpolygon_features=None, in_flow_direction_raster=None, out_watershed_features=None)
+        BatchWatershedDelineationForPolygons_archydro(in_batchpolygon_features, in_flow_direction_raster, out_watershed_features)
+        
+        INPUTS:
+         in_batchpolygon_features (Feature Layer):
+             Input Batch Polygon
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+        
+        OUTPUTS:
+         out_watershed_features (Feature Layer):
+             Output Watershed
+    
+    BuildWalls(in_dem_raster=None, innerwall_height=None, innerwall_buffer=None, breachline_buffer=None, out_walleddem_raster=None, in_external_wall_features=None, in_internal_wall_features=None, in_breachline_features=None)
+        BuildWalls_archydro(in_dem_raster, innerwall_height, innerwall_buffer, breachline_buffer, out_walleddem_raster, {in_external_wall_features}, {in_internal_wall_features}, {in_breachline_features})
+        
+        INPUTS:
+         in_dem_raster (Raster Layer):
+             Input DEM
+         innerwall_height (Double):
+             Inner Wall Height (DEM Z-Unit)
+         innerwall_buffer (Long):
+             Inner Wall Buffer (Number of Cells)
+         breachline_buffer (Long):
+             Breachline Buffer (Number of Cells)
+         in_external_wall_features {Feature Layer}:
+             Input Outer Wall Polygon
+         in_internal_wall_features {Feature Layer}:
+             Input Inner Wall Feature
+         in_breachline_features {Feature Layer}:
+             Input Breach Line
+        
+        OUTPUTS:
+         out_walleddem_raster (Raster Layer):
+             Output Walled DEM
+    
+    BurnStreamSlope(in_dem_raster=None, in_stream_features=None, out_streamslope_raster=None, out_editpoints_features=None)
+        BurnStreamSlope_archydro(in_dem_raster, in_stream_features, out_streamslope_raster, out_editpoints_features)
+        
+        INPUTS:
+         in_dem_raster (Raster Layer):
+             Input DEM
+         in_stream_features (Feature Layer):
+             Input Stream
+        
+        OUTPUTS:
+         out_streamslope_raster (Raster Layer):
+             Output Stream Sloped DEM
+         out_editpoints_features (Feature Layer):
+             Output Edit Points
+    
+    CalculateLengthDownstreamForEdges(input_edge_features=None)
+        CalculateLengthDownstreamForEdges_archydro(input_edge_features;input_edge_features...)
+        
+        INPUTS:
+         input_edge_features (Feature Layer):
+             Input Edge Feature Classes
+    
+    CalculateLengthDownstreamForJunctions(input_junction_features=None)
+        CalculateLengthDownstreamForJunctions_archydro(input_junction_features;input_junction_features...)
+        
+        INPUTS:
+         input_junction_features (Feature Layer):
+             Input Junction Feature Classes
+    
+    CatchmentGridDelineation(in_flow_direction_raster=None, in_link_raster=None, out_catchment_raster=None)
+        CatchmentGridDelineation_archydro(in_flow_direction_raster, in_link_raster, out_catchment_raster)
+        
+        INPUTS:
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_link_raster (Raster Layer):
+             Input Link Grid
+        
+        OUTPUTS:
+         out_catchment_raster (Raster Layer):
+             Output Catchment Grid
+    
+    CatchmentPolyProcessing(in_catchment_raster=None, out_catchment_features=None)
+        CatchmentPolyProcessing_archydro(in_catchment_raster, out_catchment_features)
+        
+        INPUTS:
+         in_catchment_raster (Raster Layer):
+             Input Catchment Grid
+        
+        OUTPUTS:
+         out_catchment_features (Feature Layer):
+             Output Catchment
+    
+    CombineStreamLinkAndSinkLink(in_streamlink_raster=None, in_sinklink_raster=None, out_link_raster=None, in_drainageline=None)
+        CombineStreamLinkAndSinkLink_archydro(in_streamlink_raster, in_sinklink_raster, out_link_raster, {in_drainageline})
+        
+        INPUTS:
+         in_streamlink_raster (Raster Layer):
+             Input Stream Link Grid
+         in_sinklink_raster (Raster Layer):
+             Input Sink Link Grid
+         in_drainageline {Feature Layer}:
+             Input Drainage Line
+        
+        OUTPUTS:
+         out_link_raster (Raster Layer):
+             Output Link Grid
+    
+    CompactHydroID(Input_Workspace=None, HydroIDBase=None)
+        CompactHydroID_archydro(Input_Workspace, {HydroIDBase})
+        
+           Compact HydroID - removing the gaps in the HydroID values so that the HydroID
+           values are sequential in order.
+        
+        INPUTS:
+         Input_Workspace (Workspace):
+             Input Workspace, the path to a workspace whose HydroID will be compacted.
+             After the compact operation, HydroIDs in the workspace will no have any gap
+             exsited,
+         HydroIDBase {Long}:
+             HYDROIDBASE, an integer value showing the base HydroID value of the compacted
+             result. Default HYDROIDBASE=0, and with HYDROIDBASE=0, the compacted HydroID
+             would have a min HydroID = 1.  s
+    
+    ComputeFlows(in_globalwatershed_features=None, in_globalwatershedpoint_features=None, out_flowxml=None, out_flowhtm=None, in_xmlconfig=None, out_vectorlocation=None)
+        ComputeFlows_archydro(in_globalwatershed_features, in_globalwatershedpoint_features, out_flowxml, out_flowhtm, {in_xmlconfig}, {out_vectorlocation})
+        
+        INPUTS:
+         in_globalwatershed_features (Feature Layer):
+             Input Global Watershed
+         in_globalwatershedpoint_features (Feature Layer):
+             Input Global Watershed Point
+         in_xmlconfig {File}:
+             Input XML Configuration File
+        
+        OUTPUTS:
+         out_flowxml (File):
+             Output Flows XML File
+         out_flowhtm (File):
+             Output Flows Report File
+         out_vectorlocation {Workspace}:
+             Target Vector Location Workspace
+    
+    ComputeGlobalParameters(in_globalwatershed_features=None, in_cupolygon_features=None, global_datapath=None, input_parameters=None)
+        ComputeGlobalParameters_archydro(in_globalwatershed_features, in_cupolygon_features, global_datapath, input_parameters;input_parameters...)
+        
+        INPUTS:
+         in_globalwatershed_features (Feature Layer):
+             Input Global Watershed
+         in_cupolygon_features (Feature Layer):
+             Input Cataloging Unit Polygon
+         global_datapath (Folder):
+             Global Data Path
+         input_parameters (String):
+             Input Parameters
+    
+    ComputeGreenAmptExcessRain(in_subwatershed_features=None, in_soil_landuse_precip_features=None, in_soil_lookup_table=None, in_landuse_lookup_table=None, in_timeseries_table=None, in_variabledefinition_table=None, tsvarid_rainfall=None, tsvarid_excess_rainfall=None, start_time=None, end_time=None, design_rain_constant=None, effective_porosity=None, hydraulic_conductivity=None, effective_saturation=None, out_timeseries_table=None, report_slurp=None, output_timestep_increment=None, export_rai=None, rai_path=None)
+        ComputeGreenAmptExcessRain_archydro(in_subwatershed_features, in_soil_landuse_precip_features, in_soil_lookup_table, in_landuse_lookup_table, in_timeseries_table, in_variabledefinition_table, tsvarid_rainfall, tsvarid_excess_rainfall, start_time, end_time, design_rain_constant, effective_porosity, hydraulic_conductivity, effective_saturation, out_timeseries_table, {report_slurp}, {output_timestep_increment}, {export_rai}, {rai_path})
+        
+        INPUTS:
+         in_subwatershed_features (Feature Layer):
+             Input Subwatershed
+         in_soil_landuse_precip_features (Feature Layer):
+             Input Soil Landuse Precipitation Polygon
+         in_soil_lookup_table (Table View):
+             Input Soil Lookup Table
+         in_landuse_lookup_table (Table View):
+             Input LandUse Lookup Table
+         in_timeseries_table (Table View):
+             Input Time Series Table
+         in_variabledefinition_table (Table View):
+             Input Variable Definition Table
+         tsvarid_rainfall (String):
+             Rainfall Time Series Variable ID
+         tsvarid_excess_rainfall (String):
+             Excess Rainfall Time Series Variable ID
+         start_time (Date):
+             Starting Time [mm/dd/yyyy]
+         end_time (Date):
+             Ending Time [mm/dd/yyyy]
+         design_rain_constant (Double):
+             Design Rain Constant
+         effective_porosity (Double):
+             Effective Porosity
+         hydraulic_conductivity (Double):
+             Hydraulic Conductivity
+         effective_saturation (Double):
+             Effective Saturation
+         report_slurp {Boolean}:
+             Create Time Series for SLURP
+         output_timestep_increment {Long}:
+             Output Timestep Increment
+         export_rai {Boolean}:
+             Export to RAI
+         rai_path {Folder}:
+             RAI Path
+        
+        OUTPUTS:
+         out_timeseries_table (Table View):
+             Output Target TSTable
+    
+    ComputeGreenAmptParameters(in_subwatershed_features=None, in_dcia_raster=None, in_pctimp_raster=None, in_ksat_raster=None, in_sst_raster=None, in_ssu_raster=None, in_porosity_raster=None)
+        ComputeGreenAmptParameters_archydro(in_subwatershed_features, {in_dcia_raster}, {in_pctimp_raster}, {in_ksat_raster}, {in_sst_raster}, {in_ssu_raster}, {in_porosity_raster})
+        
+        INPUTS:
+         in_subwatershed_features (Feature Layer):
+             Input Subwatershed
+         in_dcia_raster {Raster Layer}:
+             Input DCIA Grid
+         in_pctimp_raster {Raster Layer}:
+             Input Percent Impervious Grid
+         in_ksat_raster {Raster Layer}:
+             Input Hydraulic Conductivity Grid
+         in_sst_raster {Raster Layer}:
+             Input Soil Storage Grid
+         in_ssu_raster {Raster Layer}:
+             Input Soil Suction Grid
+         in_porosity_raster {Raster Layer}:
+             Input Porosity Grid
+    
+    ComputeTcGroupBasin(in_groupbasin_features=None, in_catchment_features=None, in_preferentiallink_features=None, in_longestflowpath_features=None, out_grouplongestflowpath_features=None)
+        ComputeTcGroupBasin_archydro(in_groupbasin_features, in_catchment_features, in_preferentiallink_features, in_longestflowpath_features, out_grouplongestflowpath_features)
+        
+        INPUTS:
+         in_groupbasin_features (Feature Layer):
+             Input Group Basin
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+         in_longestflowpath_features (Feature Layer):
+             Input Longest Flow Path
+        
+        OUTPUTS:
+         out_grouplongestflowpath_features (Feature Layer):
+             Output Group Longest Flow Path
+    
+    ComputeTimeofConcentration(in_drainagearea_features=None, in_TR55Zone_raster=None, in_flowdir_raster=None, in_slopefpf_raster=None, in_rain2YrInch_raster=None, in_manningsn_raster=None, in_surface_raster=None, out_traveltime_raster=None, out_longestflowpath_features=None, in_hydroedge_features=None)
+        ComputeTimeofConcentration_archydro(in_drainagearea_features, in_TR55Zone_raster, in_flowdir_raster, in_slopefpf_raster, in_rain2YrInch_raster, in_manningsn_raster, in_surface_raster, out_traveltime_raster, out_longestflowpath_features, {in_hydroedge_features})
+        
+        INPUTS:
+         in_drainagearea_features (Feature Layer):
+             Input Drainage Area
+         in_TR55Zone_raster (Raster Layer):
+             Input TR55 Zone Grid
+         in_flowdir_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_slopefpf_raster (Raster Layer):
+             Input Slope (ft/ft)
+         in_rain2YrInch_raster (Raster Layer):
+             Input 2-Year Rainfall Grid (Inches)
+         in_manningsn_raster (Raster Layer):
+             Input Manning's N Grid
+         in_surface_raster (Raster Layer):
+             Input Surface Pavement Grid
+         in_hydroedge_features {Feature Layer}:
+             Input Hydro Edge
+        
+        OUTPUTS:
+         out_traveltime_raster (Raster Layer):
+             Output Travel Time Grid
+         out_longestflowpath_features (Feature Layer):
+             Output Longest Flow Path
+    
+    ComputeTtPreferentialLink(in_preferentiallink_features=None, in_hydroedge_features=None, in_sinkpoly_features=None, in_terrain_raster=None)
+        ComputeTtPreferentialLink_archydro(in_preferentiallink_features, in_hydroedge_features, in_sinkpoly_features, in_terrain_raster)
+        
+        INPUTS:
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_sinkpoly_features (Feature Layer):
+             Input Sink Polygon
+         in_terrain_raster (Raster Layer):
+             Input DEM
+    
+    ConnectControlStructureJunctions(in_hydrojunction_features=None, in_hydroedge_features=None, in_drainageline_features=None, in_catchment_features=None, in_flowdir_raster=None)
+        ConnectControlStructureJunctions_archydro(in_hydrojunction_features, in_hydroedge_features, {in_drainageline_features}, in_catchment_features, in_flowdir_raster)
+        
+        INPUTS:
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_drainageline_features {Feature Layer}:
+             Input Drainage Line
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_flowdir_raster (Raster Layer):
+             Input Flow Direction Grid
+    
+    ConnectHydroJunctions(in_hydrojunction_features=None, in_hydroedge_features=None, in_drainage_area_features=None, in_drainageboundary_features=None, in_boundarydrainageline_features=None, in_drainageconn_table=None, in_flowdir_raster=None)
+        ConnectHydroJunctions_archydro(in_hydrojunction_features, in_hydroedge_features, in_drainage_area_features, in_drainageboundary_features, in_boundarydrainageline_features, in_drainageconn_table, in_flowdir_raster)
+        
+        INPUTS:
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_drainage_area_features (Feature Layer):
+             Input Drainage Area
+         in_drainageboundary_features (Feature Layer):
+             Input Drainage Boundary
+         in_boundarydrainageline_features (Feature Layer):
+             Input Boundary Drainage Line
+         in_drainageconn_table (Table View):
+             Input Drainage Connectivity
+         in_flowdir_raster (Raster Layer):
+             Input Flow Direction Grid
+    
+    Construct3DLine(in_line2d_features=None, in_rawdem_raster=None, out_line3d_features=None)
+        Construct3DLine_archydro(in_line2d_features, in_rawdem_raster, out_line3d_features)
+        
+        INPUTS:
+         in_line2d_features (Feature Layer):
+             Input Line 2D
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+        
+        OUTPUTS:
+         out_line3d_features (Feature Layer):
+             Output Line 3D
+    
+    Convert3DLineToRaster(in_raster_raster=None, in_line3d_features=None, out_lineraster_raster=None)
+        Convert3DLineToRaster_archydro(in_raster_raster, in_line3d_features, out_lineraster_raster)
+        
+        INPUTS:
+         in_raster_raster (Raster Layer):
+             Input Raster
+         in_line3d_features (Feature Layer):
+             Input Line 3D
+        
+        OUTPUTS:
+         out_lineraster_raster (Raster Layer):
+             Output Line Raster
+    
+    CopyApUniqueIDTableForReplica(WorkspaceSDE=None, WorkspaceGDB=None)
+        CopyApUniqueIDTableForReplica_archydro(WorkspaceSDE, WorkspaceGDB)
+        
+        INPUTS:
+         WorkspaceSDE (Workspace)
+         WorkspaceGDB (Workspace)
+    
+    CreateDirectory(Input_Location=None, Input_Directory_Name=None)
+        CreateDirectory_archydro(Input_Location, Input_Directory_Name)
+        
+        INPUTS:
+         Input_Location (String)
+         Input_Directory_Name (String)
+    
+    CreateDrainageLineStructures(in_rawdem_raster=None, in_stream_features=None, out_streamfdr_raster=None, out_streamlink_raster=None, out_drainageline_features=None, clear_right_angle=None)
+        CreateDrainageLineStructures_archydro(in_rawdem_raster, in_stream_features, out_streamfdr_raster, out_streamlink_raster, out_drainageline_features, {clear_right_angle})
+        
+        INPUTS:
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+         in_stream_features (Feature Layer):
+             Input Stream
+         clear_right_angle {Boolean}:
+             Clear Right Angles
+        
+        OUTPUTS:
+         out_streamfdr_raster (Raster Layer):
+             Output Stream Flow Direction Grid
+         out_streamlink_raster (Raster Layer):
+             Output Stream Link Grid
+         out_drainageline_features (Feature Layer):
+             Output Drainage Line
+    
+    CreateGreenAmptParamRasters(in_soil_landuse_features=None, in_soil_lookup_table=None, in_landuse_lookup_table=None, out_dcia_raster=None, out_pctimp_raster=None, out_ksat_raster=None, out_sst_raster=None, out_ssu_raster=None, out_porosity_raster=None, in_dem_raster=None)
+        CreateGreenAmptParamRasters_archydro(in_soil_landuse_features, in_soil_lookup_table, in_landuse_lookup_table, {out_dcia_raster}, {out_pctimp_raster}, {out_ksat_raster}, {out_sst_raster}, {out_ssu_raster}, {out_porosity_raster}, {in_dem_raster})
+        
+        INPUTS:
+         in_soil_landuse_features (Feature Layer):
+             Input Soil Landuse Polygon
+         in_soil_lookup_table (Table View):
+             Input Soil Lookup Table
+         in_landuse_lookup_table (Table View):
+             Input LandUse Lookup Table
+         in_dem_raster {Raster Layer}:
+             Input DEM
+        
+        OUTPUTS:
+         out_dcia_raster {Raster Layer}:
+             Output DCIA Grid
+         out_pctimp_raster {Raster Layer}:
+             Output Percent Impervious Grid
+         out_ksat_raster {Raster Layer}:
+             Output Hydraulic Conductivity Grid
+         out_sst_raster {Raster Layer}:
+             Output Soil Storage Grid
+         out_ssu_raster {Raster Layer}:
+             Output Soil Suction Grid
+         out_porosity_raster {Raster Layer}:
+             Output Porosity Grid
+    
+    CreateSinkStructures(DEM_Grid=None, Deranged_Polygon_Layer=None, Output_Sink_Polygon_Layer=None, Output_Sink_Polygon_Grid=None, Output_Sink_Point_Layer=None, Output_Sink_Point_Grid=None, Input_Stream_Line_Layer=None, Input_Draft_Sink_Point_Layer=None)
+        CreateSinkStructures_archydro(DEM_Grid, Deranged_Polygon_Layer, Output_Sink_Polygon_Layer, Output_Sink_Polygon_Grid, Output_Sink_Point_Layer, Output_Sink_Point_Grid, {Input_Stream_Line_Layer}, {Input_Draft_Sink_Point_Layer})
+        
+           Define correctly Arc Hydro configured sink point and polygon feature classes
+           and grids based on the input deranged polygon and reference DEM. Optional stream
+           (line) and point layers can be used to specify known sink points.
+        
+        INPUTS:
+         DEM_Grid (Raster Layer):
+             DEM grid. Used to snap resulting sink point and polygon layers and define
+             rasterization cell size.
+         Deranged_Polygon_Layer (Feature Layer):
+             Polygon layer defining known deranged areas. Deranged polygons will be
+             rasterized into sink polys using the DEM grid as a reference.
+         Input_Stream_Line_Layer {Feature Layer}:
+             Optional stream layer. Ends of streams ending in deranged polygons will become
+             sink points. All streams within a single deranged polygon should be snapped to a
+             single "to node".
+         Input_Draft_Sink_Point_Layer {Feature Layer}:
+             Optional draft sink point layer. Points defining known sink points. Points in
+             this layer will be enforced as sink points if they reside within a deranged
+             polygon. There should be only one draft point per deranged polygon.
+        
+        OUTPUTS:
+         Output_Sink_Polygon_Layer (Feature Layer):
+             Sink polygon layer (vector).
+         Output_Sink_Polygon_Grid (Raster Layer):
+             Sink polygon layer (raster).
+         Output_Sink_Point_Layer (Feature Layer):
+             Sink point layer (vector).
+         Output_Sink_Point_Grid (Raster Layer):
+             Sink point layer (raster).
+    
+    CreateTIN(Output_TIN=None, Spatial_Reference=None, Input_feature_class_height_field_SF_type_tag_field=None, Constrained_Delaunay=None)
+        CreateTIN_archydro(Output_TIN, {Spatial_Reference}, Input_feature_class_height_field_SF_type_tag_field, {Constrained_Delaunay})
+        
+        INPUTS:
+         Spatial_Reference {Spatial Reference}
+         Input_feature_class_height_field_SF_type_tag_field (String)
+         Constrained_Delaunay {Boolean}
+        
+        OUTPUTS:
+         Output_TIN (TIN Layer)
+    
+    CreateThiessenPolygons(in_point_features=None, out_thiessen_poly_features=None, output_fields=None)
+        CreateThiessenPolygons_archydro(in_point_features, out_thiessen_poly_features, {output_fields})
+        
+        INPUTS:
+         in_point_features (Feature Layer):
+             Input Point
+         output_fields {String}:
+             Output Fields
+        
+        OUTPUTS:
+         out_thiessen_poly_features (Feature Layer):
+             Output Thiessen Polygon
+    
+    CrossSectionDirection(in_crosssection_features=None, in_line_features=None)
+        CrossSectionDirection_archydro(in_crosssection_features, in_line_features)
+        
+        INPUTS:
+         in_crosssection_features (Feature Layer):
+             Input Cross Section
+         in_line_features (Feature Layer):
+             Input Line
+    
+    DEMReconditioning(in_rawdem_raster=None, in_agreestream_features=None, number_cells_buffer=None, zdrop_smooth=None, zdrop_sharp=None, out_agreedem_raster=None, raise_negative=None)
+        DEMReconditioning_archydro(in_rawdem_raster, in_agreestream_features, number_cells_buffer, zdrop_smooth, zdrop_sharp, out_agreedem_raster, {raise_negative})
+        
+        INPUTS:
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+         in_agreestream_features (Feature Layer):
+             Input AGREE Stream
+         number_cells_buffer (Double):
+             Number of Cells for Stream Buffer
+         zdrop_smooth (Double):
+             Smooth Drop in Z Units
+         zdrop_sharp (Double):
+             Sharp Drop in Z Units
+         raise_negative {Boolean}:
+             Raise Negative Values
+        
+        OUTPUTS:
+         out_agreedem_raster (Raster Layer):
+             Output AGREE DEM
+    
+    DefineOverlandPreferentialNodeLink(in_catchment_features=None, in_sinkpoint_features=None, in_hydrojunction_features=None, in_hydroedge_features=None, in_terrain_raster=None, out_preferentialnode_features=None, out_preferentiallink_features=None)
+        DefineOverlandPreferentialNodeLink_archydro(in_catchment_features, in_sinkpoint_features, in_hydrojunction_features, in_hydroedge_features, in_terrain_raster, out_preferentialnode_features, out_preferentiallink_features)
+        
+        INPUTS:
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_sinkpoint_features (Feature Layer):
+             Input Sink Point
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_terrain_raster (Raster Layer):
+             Input DEM
+        
+        OUTPUTS:
+         out_preferentialnode_features (Feature Layer):
+             Output Preferential Node
+         out_preferentiallink_features (Feature Layer):
+             Output Preferential Link
+    
+    DelineateFromMultipleInletsAndOutlets(in_pointsource_features=None, in_flow_direction_raster=None, in_stream_raster=None, out_watershed_features=None, out_watershedpoint_features=None)
+        DelineateFromMultipleInletsAndOutlets_archydro(in_pointsource_features, in_flow_direction_raster, in_stream_raster, out_watershed_features, out_watershedpoint_features)
+        
+        INPUTS:
+         in_pointsource_features (Feature Layer):
+             Input Point Source
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_stream_raster (Raster Layer):
+             Input Stream Grid
+        
+        OUTPUTS:
+         out_watershed_features (Feature Layer):
+             Output Watershed
+         out_watershedpoint_features (Feature Layer):
+             Output Watershed Point
+    
+    DendriticTerrainProcessingWithImposedDLAndWall(RawDEM=None, AgreeStream=None, parameter_3=None, Input_Outer_Wall_Polygon=None)
+        DendriticTerrainProcessingWithImposedDLAndWall_archydro(RawDEM, AgreeStream, parameter_3, {Input_Outer_Wall_Polygon})
+        
+        INPUTS:
+         RawDEM (Raster Layer)
+         AgreeStream (Feature Layer)
+         Inner_Wall_Height__DEM_Z-Unit_ (Double)
+         Input_Outer_Wall_Polygon {Feature Layer}
+    
+    DepressionEvaluation(in_dem_raster=None, out_depression_features=None, out_depression_drainage_features=None)
+        DepressionEvaluation_archydro(in_dem_raster, out_depression_features, out_depression_drainage_features)
+        
+        INPUTS:
+         in_dem_raster (Raster Layer):
+             Input DEM
+        
+        OUTPUTS:
+         out_depression_features (Feature Layer):
+             Output Depression
+         out_depression_drainage_features (Feature Layer):
+             Output Depression Drainage Area
+    
+    DownloadTimeSeriesData(input_datacarttype=None, input_datacarttable=None, input_datacartxmlfile=None, output_geodatabase=None)
+        DownloadTimeSeriesData_archydro(input_datacarttype, {input_datacarttable}, {input_datacartxmlfile}, output_geodatabase)
+        
+        INPUTS:
+         input_datacarttype (String):
+             Input Data Cart Type
+         input_datacarttable {Table View}:
+             Input Data Cart Layer/Table
+         input_datacartxmlfile {File}:
+             Input Data Cart XML File
+        
+        OUTPUTS:
+         output_geodatabase (Workspace):
+             Output Personal Geodatabase (.mdb or .gdb)
+    
+    DrainageAreaCentroid(in_drainage_area_features=None, out_centroid_features=None)
+        DrainageAreaCentroid_archydro(in_drainage_area_features, out_centroid_features)
+        
+        INPUTS:
+         in_drainage_area_features (Feature Layer):
+             Input Drainage Area
+        
+        OUTPUTS:
+         out_centroid_features (Feature Layer):
+             Output Centroid
+    
+    DrainageAreaCharacterization(in_drainage_area_features=None, in_terrain_raster=None, in_exclusion_area_features=None, out_eav_table=None, extrusion_value=None, slice_count=None, slice_increment=None, overwrite_eav=None)
+        DrainageAreaCharacterization_archydro(in_drainage_area_features, in_terrain_raster, {in_exclusion_area_features}, out_eav_table, {extrusion_value}, {slice_count}, {slice_increment}, {overwrite_eav})
+        
+        INPUTS:
+         in_drainage_area_features (Feature Layer):
+             Input Drainage Area
+         in_terrain_raster (Raster Layer):
+             Input DEM
+         in_exclusion_area_features {Feature Layer}:
+             Input Exclusion Area
+         extrusion_value {Double}:
+             Extrusion (linear units)
+         slice_count {Double}:
+             Slice Count
+         slice_increment {Double}:
+             Slice Increment (linear units)
+         overwrite_eav {Boolean}:
+             Overwrite Existing DrainEAV Values
+        
+        OUTPUTS:
+         out_eav_table (Table View):
+             Output Drainage EAV
+    
+    DrainageBoundaryDefinition(in_drainage_area_features=None, in_terrain_raster=None, out_drainageboundary_features=None, out_drainconn_table=None)
+        DrainageBoundaryDefinition_archydro(in_drainage_area_features, in_terrain_raster, out_drainageboundary_features, out_drainconn_table)
+        
+        INPUTS:
+         in_drainage_area_features (Feature Layer):
+             Input Drainage Area
+         in_terrain_raster (TIN Layer / Raster Layer):
+             Input DEM
+        
+        OUTPUTS:
+         out_drainageboundary_features (Feature Layer):
+             Output Drainage Boundary
+         out_drainconn_table (Table View):
+             Output Drainage Connectivity
+    
+    DrainageBoundaryDirection(in_drainageboundary_features=None, in_drainconn_table=None, in_preferentiallink_features=None, in_drainage_area_features=None)
+        DrainageBoundaryDirection_archydro(in_drainageboundary_features, in_drainconn_table, in_preferentiallink_features, in_drainage_area_features)
+        
+        INPUTS:
+         in_drainageboundary_features (Feature Layer):
+             Input Drainage Boundary
+         in_drainconn_table (Table View):
+             Input Drainage Connectivity
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+         in_drainage_area_features (Feature Layer):
+             Input Drainage Area
+    
+    DrainageBoundarySmoothing(in_drainageboundary_features=None, smoothing_tolerance=None, out_smoothdrainageboundary_features=None)
+        DrainageBoundarySmoothing_archydro(in_drainageboundary_features, smoothing_tolerance, out_smoothdrainageboundary_features)
+        
+        INPUTS:
+         in_drainageboundary_features (Feature Layer):
+             Input Drainage Boundary
+         smoothing_tolerance (Linear unit):
+             Smoothing Tolerance
+        
+        OUTPUTS:
+         out_smoothdrainageboundary_features (Feature Layer):
+             Output Smoothed Drainage Boundary
+    
+    DrainageConnectivityCharacterization(in_terrain_raster=None, in_flow_direction_raster=None, in_drainage_area_features=None, in_drainageboundary_features=None, in_drainagepoint_features=None, in_drainconn_table=None, out_hydroedge_features=None, out_hydrojunction_features=None, out_boundarydrainageline_features=None)
+        DrainageConnectivityCharacterization_archydro(in_terrain_raster, in_flow_direction_raster, in_drainage_area_features, in_drainageboundary_features, in_drainagepoint_features, in_drainconn_table, out_hydroedge_features, out_hydrojunction_features, out_boundarydrainageline_features)
+        
+        INPUTS:
+         in_terrain_raster (TIN Layer / Raster Layer):
+             Input DEM
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_drainage_area_features (Feature Layer):
+             Input Drainage Area
+         in_drainageboundary_features (Feature Layer):
+             Input Drainage Boundary
+         in_drainagepoint_features (Feature Layer):
+             Input Drainage Point
+         in_drainconn_table (Table View):
+             Input Drainage Connectivity
+        
+        OUTPUTS:
+         out_hydroedge_features (Feature Layer):
+             Output Hydro Edge
+         out_hydrojunction_features (Feature Layer):
+             Output Hydro Junction
+         out_boundarydrainageline_features (Feature Layer):
+             Output Boundary Drainage Line
+    
+    DrainageLineProcessing(in_link_raster=None, in_flow_direction_raster=None, out_drainageline_features=None)
+        DrainageLineProcessing_archydro(in_link_raster, in_flow_direction_raster, out_drainageline_features)
+        
+        INPUTS:
+         in_link_raster (Raster Layer):
+             Input Stream Link Grid
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+        
+        OUTPUTS:
+         out_drainageline_features (Feature Layer):
+             Output Drainage Line
+    
+    DrainagePointProcessing(in_flowacc_raster=None, in_catchment_raster=None, in_catchment_features=None, out_drainagepoint_features=None)
+        DrainagePointProcessing_archydro(in_flowacc_raster, in_catchment_raster, in_catchment_features, out_drainagepoint_features)
+        
+        INPUTS:
+         in_flowacc_raster (Raster Layer):
+             Input Flow Accumulation Grid
+         in_catchment_raster (Raster Layer):
+             Input Catchment Grid
+         in_catchment_features (Feature Layer):
+             Input Catchment
+        
+        OUTPUTS:
+         out_drainagepoint_features (Feature Layer):
+             Output Drainage Point
+    
+    EditComputedParameters(in_flowxml=None, in_parameters=None, out_editedflowxml=None, in_xmlconfig=None)
+        EditComputedParameters_archydro(in_flowxml, in_parameters;in_parameters..., out_editedflowxml, {in_xmlconfig})
+        
+        INPUTS:
+         in_flowxml (File):
+             Input Flows XML File
+         in_parameters (Value Table):
+             Input Parameters
+         in_xmlconfig {File}:
+             Input XML Configuration File
+        
+        OUTPUTS:
+         out_editedflowxml (File):
+             Output Flows XML File
+    
+    ElevationWidthAreaCharacterization(in_line_features_3d=None, out_ewa_table=None, extrusion_value=None, slice_count=None, slice_increment=None, zfactor=None, overwrite_ewa=None)
+        ElevationWidthAreaCharacterization_archydro(in_line_features_3d, out_ewa_table, {extrusion_value}, {slice_count}, {slice_increment}, {zfactor}, {overwrite_ewa})
+        
+        INPUTS:
+         in_line_features_3d (Feature Layer):
+             Input Line 3D
+         extrusion_value {Double}:
+             Extrusion (linear units)
+         slice_count {Double}:
+             Slice Count
+         slice_increment {Double}:
+             Slice Increment (linear units)
+         zfactor {Double}:
+             Z Factor
+         overwrite_ewa {Boolean}:
+             Overwrite Existing EWA Values
+        
+        OUTPUTS:
+         out_ewa_table (Table View):
+             Output Boundary EWA
+    
+    ExcelToMap(input_excel_file=None)
+        ExcelToMap_archydro(input_excel_file)
+        
+        INPUTS:
+         input_excel_file (File):
+             Input Excel File
+    
+    ExportDataCartToXML(input_datacarttable=None, output_datacartxmlfile=None)
+        ExportDataCartToXML_archydro(input_datacarttable, output_datacartxmlfile)
+        
+        INPUTS:
+         input_datacarttable (Table View):
+             Input Data Cart Layer/Table
+        
+        OUTPUTS:
+         output_datacartxmlfile (File):
+             Output Data Cart XML File
+    
+    ExportToDSS(in_timeseries_features=None, in_timeseries_table=None, in_variabledefinition_table=None, tstype_id=None, start_time=None, end_time=None, dssfile_for_export=None, gagefile_yes=None)
+        ExportToDSS_archydro(in_timeseries_features, in_timeseries_table, in_variabledefinition_table, tstype_id, start_time, end_time, dssfile_for_export, {gagefile_yes})
+        
+        INPUTS:
+         in_timeseries_features (Feature Layer):
+             Input TS Layer
+         in_timeseries_table (Table View):
+             Input Time Series Table
+         in_variabledefinition_table (Table View):
+             Input Variable Definition Table
+         tstype_id (String):
+             Time Series Type ID
+         start_time (Date):
+             Starting Time [mm/dd/yyyy]
+         end_time (Date):
+             Ending Time [mm/dd/yyyy]
+         gagefile_yes {Boolean}:
+             Generate Gage File
+        
+        OUTPUTS:
+         dssfile_for_export (File):
+             DSS File for Export
+    
+    ExportToICPRGAParams(in_subwatershed_features=None, in_soil_landuse_precip_features=None, in_soil_lookup_table=None, in_landuse_lookup_table=None, rai_path=None, icprexport_xmlpath=None)
+        ExportToICPRGAParams_archydro(in_subwatershed_features, in_soil_landuse_precip_features, in_soil_lookup_table, in_landuse_lookup_table, rai_path, icprexport_xmlpath)
+        
+        INPUTS:
+         in_subwatershed_features (Feature Layer):
+             Input Subwatershed
+         in_soil_landuse_precip_features (Feature Layer):
+             Input Soil Landuse Precipitation Polygon
+         in_soil_lookup_table (Table View):
+             Input Soil Lookup Table
+         in_landuse_lookup_table (Table View):
+             Input LandUse Lookup Table
+         rai_path (Folder):
+             RAI Path - Green and Ampt Parameters
+        
+        OUTPUTS:
+         icprexport_xmlpath (File):
+             Export Location for ICPR XML - Green and Ampt Parameters
+    
+    ExportToICPRGARainfallExcess(in_subwatershed_features=None, rai_path=None, icprexport_xmlpath=None)
+        ExportToICPRGARainfallExcess_archydro(in_subwatershed_features, rai_path, icprexport_xmlpath)
+        
+        INPUTS:
+         in_subwatershed_features (Feature Layer):
+             Input Subwatershed
+         rai_path (Folder):
+             RAI Path - Green and Ampt Excess Rain
+        
+        OUTPUTS:
+         icprexport_xmlpath (File):
+             Export Location for ICPR XML - Green and Ampt Excess Rain
+    
+    ExportToXML(in_appconfig=None, input_export_controlfile=None, output_export_xmlfile=None)
+        ExportToXML_archydro(in_appconfig, input_export_controlfile, output_export_xmlfile)
+        
+        INPUTS:
+         in_appconfig (String):
+             Application Name
+         input_export_controlfile (File):
+             Input Export Control XML File
+        
+        OUTPUTS:
+         output_export_xmlfile (File):
+             Output Export XML File
+    
+    ExportToolParameters(input_tool_name=None, out_toolparams_table=None)
+        ExportToolParameters_archydro(input_tool_name, out_toolparams_table)
+        
+        INPUTS:
+         input_tool_name (Tool):
+             Input Tool or Model Name
+        
+        OUTPUTS:
+         out_toolparams_table (Table View):
+             Output Tool Parameters Table
+    
+    ExtendLines(in_line_features=None, extend_type=None, extend_distance=None, out_extendedline_features=None)
+        ExtendLines_archydro(in_line_features, extend_type, extend_distance, out_extendedline_features)
+        
+        INPUTS:
+         in_line_features (Feature Layer):
+             Input Line 2D
+         extend_type (String):
+             Extend from
+         extend_distance (Linear unit):
+             Extend distance
+        
+        OUTPUTS:
+         out_extendedline_features (Feature Layer):
+             Output Extended Line
+    
+    FillSinks(in_dem_raster=None, out_hydrodem_raster=None, fill_threshold=None, in_deranged_poly_features=None, use_issinkfield=None)
+        FillSinks_archydro(in_dem_raster, out_hydrodem_raster, {fill_threshold}, {in_deranged_poly_features}, {use_issinkfield})
+        
+        INPUTS:
+         in_dem_raster (Raster Layer):
+             Input DEM
+         fill_threshold {Double}:
+             Fill Threshold
+         in_deranged_poly_features {Feature Layer}:
+             Input Deranged Polygon
+         use_issinkfield {Boolean}:
+             Use IsSink field
+        
+        OUTPUTS:
+         out_hydrodem_raster (Raster Layer):
+             Output Hydro DEM
+    
+    FindNextDownstreamJunction(in_junction_features=None)
+        FindNextDownstreamJunction_archydro(in_junction_features)
+        
+        INPUTS:
+         in_junction_features (Feature Layer):
+             Input Junction
+    
+    FindNextDownstreamLine(in_line_features=None)
+        FindNextDownstreamLine_archydro(in_line_features)
+        
+        INPUTS:
+         in_line_features (Feature Layer):
+             Input Line
+    
+    FlipPreferentialPath(in_preferentiallink_features=None, in_hydroedge_features=None)
+        FlipPreferentialPath_archydro(in_preferentiallink_features, in_hydroedge_features)
+        
+        INPUTS:
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+    
+    FloodFromStreamWSE(Target_Raster_Location_Workspace=None, Target_Vector_Location_Workspace=None, Target_Feature_Dataset=None, WSEAlongStream=None, Stream=None, DEM=None, Watershed=None, FloodPoly=None, FloodDepth=None)
+        FloodFromStreamWSE_archydro(Target_Raster_Location_Workspace, Target_Vector_Location_Workspace, Target_Feature_Dataset, WSEAlongStream, {Stream}, DEM, {Watershed}, FloodPoly, FloodDepth)
+        
+        INPUTS:
+         Target_Raster_Location_Workspace (Workspace)
+         Target_Vector_Location_Workspace (Workspace)
+         Target_Feature_Dataset (String)
+         WSEAlongStream (Composite Geodataset)
+         Stream {Feature Layer}
+         DEM (Raster Layer)
+         Watershed {Composite Geodataset}
+        
+        OUTPUTS:
+         FloodPoly (Feature Class)
+         FloodDepth (Raster Dataset)
+    
+    FlowAccumulation(in_flow_direction_raster=None, out_flow_accumulation_raster=None)
+        FlowAccumulation_archydro(in_flow_direction_raster, out_flow_accumulation_raster)
+        
+        INPUTS:
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+        
+        OUTPUTS:
+         out_flow_accumulation_raster (Raster Layer):
+             Output Flow Accumulation Grid
+    
+    FlowDirWithSinks(in_hydrodem_raster=None, in_deranged_poly_features=None, out_flow_direction_raster=None, out_sinkpoint_features=None, out_sinklink_raster=None, out_sinkwatershed_raster=None, in_external_wall_features=None)
+        FlowDirWithSinks_archydro(in_hydrodem_raster, in_deranged_poly_features, out_flow_direction_raster, out_sinkpoint_features, out_sinklink_raster, out_sinkwatershed_raster, {in_external_wall_features})
+        
+        INPUTS:
+         in_hydrodem_raster (Raster Layer):
+             Input Hydro DEM
+         in_deranged_poly_features (Feature Layer):
+             Input Deranged Polygon
+         in_external_wall_features {Feature Layer}:
+             Input Outer Wall Polygon
+        
+        OUTPUTS:
+         out_flow_direction_raster (Raster Layer):
+             Output Flow Direction Grid
+         out_sinkpoint_features (Feature Layer):
+             Output Sink Point
+         out_sinklink_raster (Raster Layer):
+             Output Sink Link Grid
+         out_sinkwatershed_raster (Raster Layer):
+             Output Sink Watershed Grid
+    
+    FlowDirection(in_hydrodem_raster=None, out_flow_direction_raster=None, in_external_wall_features=None)
+        FlowDirection_archydro(in_hydrodem_raster, out_flow_direction_raster, {in_external_wall_features})
+        
+        INPUTS:
+         in_hydrodem_raster (Raster Layer):
+             Input Hydro DEM
+         in_external_wall_features {Feature Layer}:
+             Input Outer Wall Polygon
+        
+        OUTPUTS:
+         out_flow_direction_raster (Raster Layer):
+             Output Flow Direction Grid
+    
+    FlowPathParametersFrom2DLine(in_longestflowpath_features=None, in_rawdem_raster=None, out_slp1085point_features=None)
+        FlowPathParametersFrom2DLine_archydro(in_longestflowpath_features, in_rawdem_raster, out_slp1085point_features)
+        
+        INPUTS:
+         in_longestflowpath_features (Feature Layer):
+             Input Longest Flow Path
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+        
+        OUTPUTS:
+         out_slp1085point_features (Feature Layer):
+             Output Slope 1085 Point
+    
+    FlowPathParametersFrom3DLine(in_longestflowpath3d_features=None, out_slp1085point_features=None)
+        FlowPathParametersFrom3DLine_archydro(in_longestflowpath3d_features, out_slp1085point_features)
+        
+        INPUTS:
+         in_longestflowpath3d_features (Feature Layer):
+             Input Longest Flow Path 3D
+        
+        OUTPUTS:
+         out_slp1085point_features (Feature Layer):
+             Output Slope 1085 Point
+    
+    GenerateFNodeTNode(in_line_features=None)
+        GenerateFNodeTNode_archydro(in_line_features)
+        
+        INPUTS:
+         in_line_features (Feature Layer):
+             Input Line
+    
+    GenerateFlowPath(in_batchpoint_features=None, in_flow_direction_raster=None, in_catchment_features=None, in_drainageline_features=None, out_flowpath_features=None)
+        GenerateFlowPath_archydro(in_batchpoint_features, in_flow_direction_raster, in_catchment_features, in_drainageline_features, out_flowpath_features)
+        
+        INPUTS:
+         in_batchpoint_features (Feature Layer):
+             Input Batch Point
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_drainageline_features (Feature Layer):
+             Input Drainage Line
+        
+        OUTPUTS:
+         out_flowpath_features (Feature Layer):
+             Output Flow Path
+    
+    GenerateGroupBasin(in_catchment_features=None, in_preferentiallink_features=None, in_sinkpoint_features=None, out_groupbasin_features=None)
+        GenerateGroupBasin_archydro(in_catchment_features, in_preferentiallink_features, in_sinkpoint_features, out_groupbasin_features)
+        
+        INPUTS:
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+         in_sinkpoint_features (Feature Layer):
+             Input Sink Point
+        
+        OUTPUTS:
+         out_groupbasin_features (Feature Layer):
+             Output Group Basin
+    
+    GenerateGroupJunction(in_groupbasin_features=None, in_hydrojunction_features=None, in_sinkpoint_features=None, out_groupjunction_features=None)
+        GenerateGroupJunction_archydro(in_groupbasin_features, in_hydrojunction_features, in_sinkpoint_features, out_groupjunction_features)
+        
+        INPUTS:
+         in_groupbasin_features (Feature Layer):
+             Input Group Basin
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_sinkpoint_features (Feature Layer):
+             Input Sink Point
+        
+        OUTPUTS:
+         out_groupjunction_features (Feature Layer):
+             Output Group Junction
+    
+    GenerateGroupLink(in_groupjunction_features=None, in_groupbasin_features=None, in_hydrojunction_features=None, in_hydroedge_features=None, in_catchment_features=None, in_preferentiallink_features=None, out_groupnode_features=None, out_grouplink_features=None)
+        GenerateGroupLink_archydro(in_groupjunction_features, in_groupbasin_features, in_hydrojunction_features, in_hydroedge_features, in_catchment_features, in_preferentiallink_features, out_groupnode_features, out_grouplink_features)
+        
+        INPUTS:
+         in_groupjunction_features (Feature Layer):
+             Input Group Junction
+         in_groupbasin_features (Feature Layer):
+             Input Group Basin
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+        
+        OUTPUTS:
+         out_groupnode_features (Feature Layer):
+             Output Group Node
+         out_grouplink_features (Feature Layer):
+             Output Group Link
+    
+    GenerateICPRBasin(in_icprnode_features=None, in_icprlink_features=None, in_groupbasin_features=None, in_catchment_features=None, in_preferentiallink_features=None, in_flow_direction_raster=None, in_icprbasin_features=None)
+        GenerateICPRBasin_archydro(in_icprnode_features, in_icprlink_features, in_groupbasin_features, in_catchment_features, in_preferentiallink_features, in_flow_direction_raster, in_icprbasin_features)
+        
+        INPUTS:
+         in_icprnode_features (Feature Layer):
+             Input ICPR Node
+         in_icprlink_features (Feature Layer):
+             Input ICPR Link
+         in_groupbasin_features (Feature Layer):
+             Input Group Basin
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_icprbasin_features (Feature Layer):
+             Input ICPR Basin
+    
+    GenerateICPRLink(in_groupbasin_features=None, in_icpr_seedpoint_features=None, in_grouplink_features=None, in_hydroedge_features=None, in_hydrojunction_features=None, in_groupjunction_features=None, in_icprnode_features=None, in_hep_features=None, in_icprlink_features=None)
+        GenerateICPRLink_archydro(in_groupbasin_features, in_icpr_seedpoint_features, in_grouplink_features, in_hydroedge_features, in_hydrojunction_features, in_groupjunction_features, in_icprnode_features, in_hep_features, in_icprlink_features)
+        
+        INPUTS:
+         in_groupbasin_features (Feature Layer):
+             Input Group Basin
+         in_icpr_seedpoint_features (Feature Layer):
+             Input ICPR Seed Point
+         in_grouplink_features (Feature Layer):
+             Input Group Link
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_groupjunction_features (Feature Layer):
+             Input Group Junction
+         in_icprnode_features (Feature Layer):
+             Input ICPR Node
+         in_hep_features (Feature Layer):
+             Input Hydraulic Element Point
+         in_icprlink_features (Feature Layer):
+             Input ICPR Link
+    
+    GenerateICPRNode(in_icpr_seedpoint_features=None, in_groupnode_features=None, in_icprnode_features=None)
+        GenerateICPRNode_archydro(in_icpr_seedpoint_features, {in_groupnode_features}, in_icprnode_features)
+        
+        INPUTS:
+         in_icpr_seedpoint_features (Feature Layer):
+             Input ICPR Seed Point
+         in_groupnode_features {Feature Layer}:
+             Input Group Node
+         in_icprnode_features (Feature Layer):
+             Input ICPR Node
+    
+    GenerateProcessingUnits(inRiverFL=None, inCatFL=None, RiverOrderField=None, inPUAreaSize=None, outRiverFL=None, outCatFL=None)
+        GenerateProcessingUnits_archydro(inRiverFL, inCatFL, RiverOrderField, inPUAreaSize, outRiverFL, outCatFL)
+        
+        INPUTS:
+         inRiverFL (Feature Layer):
+             Input Drainage Line
+         inCatFL (Feature Layer):
+             Input Catchment
+         RiverOrderField (Field):
+             River Order Field
+         inPUAreaSize (Double):
+             Minimum Area for Processing Units
+        
+        OUTPUTS:
+         outRiverFL (Feature Layer):
+             Output Processing Units River
+         outCatFL (Feature Layer):
+             Output Processing Units Area
+    
+    GenerateTR55ZoneGrid(in_drainagearea_features=None, in_dem_raster=None, overland_flowdistance_meters=None, out_TR55Zone_raster=None, in_hydroedge_features=None, channel_buffer_meters=None)
+        GenerateTR55ZoneGrid_archydro(in_drainagearea_features, in_dem_raster, overland_flowdistance_meters, out_TR55Zone_raster, {in_hydroedge_features}, {channel_buffer_meters})
+        
+        INPUTS:
+         in_drainagearea_features (Feature Layer):
+             Input Drainage Area
+         in_dem_raster (Raster Layer):
+             Input DEM
+         overland_flowdistance_meters (Double):
+             Overland Flow Distance in Meters
+         in_hydroedge_features {Feature Layer}:
+             Input Hydro Edge
+         channel_buffer_meters {Double}:
+             Channel Buffer Distance in Meters
+        
+        OUTPUTS:
+         out_TR55Zone_raster (Raster Layer):
+             Output TR55 Zone Grid
+    
+    GeoRASToFlood(Input_M2MRASResults_Geodatabase=None, Input_DEM=None, Input_Flood_Elevation_Field=None)
+        GeoRASToFlood_archydro(Input_M2MRASResults_Geodatabase, Input_DEM, Input_Flood_Elevation_Field)
+        
+        INPUTS:
+         Input_M2MRASResults_Geodatabase (Workspace)
+         Input_DEM (Composite Geodataset)
+         Input_Flood_Elevation_Field (String)
+    
+    GetCoordinateSystemfromVector(Input_Feature_Layer=None)
+        GetCoordinateSystemfromVector_archydro(Input_Feature_Layer)
+        
+        INPUTS:
+         Input_Feature_Layer (Feature Layer)
+    
+    GetField(Input_Feature_Layer=None, Input_Field=None)
+        GetField_archydro(Input_Feature_Layer, Input_Field)
+        
+        INPUTS:
+         Input_Feature_Layer (Feature Layer)
+         Input_Field (Field)
+    
+    GetFieldAlias(Input_Feature_Layer=None, Input_Field=None)
+        GetFieldAlias_archydro(Input_Feature_Layer, Input_Field)
+        
+        INPUTS:
+         Input_Feature_Layer (Feature Layer)
+         Input_Field (Field)
+    
+    GetFieldAliasbyAlias(Input_Feature_Layer=None, Input_Field_Alias_Name=None)
+        GetFieldAliasbyAlias_archydro(Input_Feature_Layer, Input_Field_Alias_Name)
+        
+        INPUTS:
+         Input_Feature_Layer (Feature Layer)
+         Input_Field_Alias_Name (String)
+    
+    GetSpatialReferenceFromRaster(Input_Raster=None)
+        GetSpatialReferenceFromRaster_archydro(Input_Raster)
+        
+        INPUTS:
+         Input_Raster (Raster Layer)
+    
+    GetSpatialReferenceFromVector(Input_Feature_Layer=None)
+        GetSpatialReferenceFromVector_archydro(Input_Feature_Layer)
+        
+        INPUTS:
+         Input_Feature_Layer (Feature Layer)
+    
+    GroupSelectedCatchments(in_catchment_features=None, overwrite_group=None)
+        GroupSelectedCatchments_archydro(in_catchment_features, {overwrite_group})
+        
+        INPUTS:
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         overwrite_group {Boolean}:
+             Overwrite Existing GroupID
+    
+    HMStoGeoRAS(Input_HMS_Project_File___hms_=None, Start_Time__mm_dd_yyyy_00_00_00_=None, End_Time__mm_dd_yyyy_00_00_00_=None, Time_Interval=None, Input_RAS_Project_File___prj_=None, Input_Cross_Section_Features=None, Input_GeoRAS2GXDE_XSLT_File=None, Output_Directory=None)
+        HMStoGeoRAS_archydro(Input_HMS_Project_File___hms_, Start_Time__mm_dd_yyyy_00_00_00_, End_Time__mm_dd_yyyy_00_00_00_, Time_Interval, Input_RAS_Project_File___prj_, Input_Cross_Section_Features, Input_GeoRAS2GXDE_XSLT_File, Output_Directory)
+        
+        INPUTS:
+         Input_HMS_Project_File___hms_ (File)
+         Start_Time__mm_dd_yyyy_00_00_00_ (Date)
+         End_Time__mm_dd_yyyy_00_00_00_ (Date)
+         Time_Interval (Long)
+         Input_RAS_Project_File___prj_ (File)
+         Input_Cross_Section_Features (Feature Layer)
+         Input_GeoRAS2GXDE_XSLT_File (File)
+         Output_Directory (Folder)
+    
+    HydroNetworkGeneration(in_drainageline_features=None, in_catchment_features=None, in_drainagepoint_features=None, network_name=None, out_hydroedge_features=None, out_hydrojunction_features=None)
+        HydroNetworkGeneration_archydro(in_drainageline_features, in_catchment_features, in_drainagepoint_features, network_name, out_hydroedge_features, out_hydrojunction_features)
+        
+        INPUTS:
+         in_drainageline_features (Feature Layer):
+             Input Drainage Line
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_drainagepoint_features (Feature Layer):
+             Input Drainage Point
+         network_name (String):
+             Network Name
+        
+        OUTPUTS:
+         out_hydroedge_features (Feature Layer):
+             Output Hydro Edge
+         out_hydrojunction_features (Feature Layer):
+             Output Hydro Junction
+    
+    ImportFromDSS(in_timeseries_features=None, in_variabledefinition_table=None, tstype_id=None, dssfile_for_import=None, out_timeseries_table=None)
+        ImportFromDSS_archydro(in_timeseries_features, in_variabledefinition_table, tstype_id, dssfile_for_import, out_timeseries_table)
+        
+        INPUTS:
+         in_timeseries_features (Feature Layer):
+             Input TS Layer
+         in_variabledefinition_table (Table View):
+             Input Variable Definition Table
+         tstype_id (String):
+             Time Series Type ID
+         dssfile_for_import (File):
+             DSS File for Import
+        
+        OUTPUTS:
+         out_timeseries_table (Table View):
+             Output Time Series Table
+    
+    ImportFromICPR(in_modelresult_location=None, in_variabledefinition_table=None, out_node_result_table=None, out_link_result_table=None, out_node_hydrograph_table=None, out_link_hydrograph_table=None)
+        ImportFromICPR_archydro(in_modelresult_location, in_variabledefinition_table, out_node_result_table, out_link_result_table, out_node_hydrograph_table, out_link_hydrograph_table)
+        
+        INPUTS:
+         in_modelresult_location (Folder):
+             Input Model Result Location
+         in_variabledefinition_table (Table View):
+             Input Variable Definition Table
+        
+        OUTPUTS:
+         out_node_result_table (Table View):
+             Output ICPR Node Max Stage (Ft) Table
+         out_link_result_table (Table View):
+             Output ICPR Link Max Flow (Cfs) Table
+         out_node_hydrograph_table (Table View):
+             Output ICPR Node Hydrograph Table
+         out_link_hydrograph_table (Table View):
+             Output ICPR Link Hydrograph Table
+    
+    ImportFromXML(input_xmlfile=None, output_filegeodatabase=None)
+        ImportFromXML_archydro(input_xmlfile, output_filegeodatabase)
+        
+        INPUTS:
+         input_xmlfile (File):
+             Input XML File for Import
+        
+        OUTPUTS:
+         output_filegeodatabase (Workspace):
+             Output File Geodatabase (.gdb)
+    
+    InteractiveDelineation(Input_Points_to_Delineate=None, Input_Flow_Direction_Grid=None, Input_Stream_Grid=None, Input_Snap_Stream_Grid=None, Input_Catchment=None, Input_Adjoint_Catchment=None, Watershed=None, WatershedPoint=None)
+        InteractiveDelineation_archydro(Input_Points_to_Delineate, Input_Flow_Direction_Grid, Input_Stream_Grid, {Input_Snap_Stream_Grid}, Input_Catchment, Input_Adjoint_Catchment, Watershed, WatershedPoint)
+        
+        INPUTS:
+         Input_Points_to_Delineate (Feature Set)
+         Input_Flow_Direction_Grid (Raster Layer)
+         Input_Stream_Grid (Raster Layer)
+         Input_Snap_Stream_Grid {Raster Layer}
+         Input_Catchment (Feature Layer)
+         Input_Adjoint_Catchment (Feature Layer)
+        
+        OUTPUTS:
+         Watershed (Feature Layer)
+         WatershedPoint (Feature Layer)
+    
+    IntersectAreas(in_from_features=None, in_to_features=None, out_intersect_features=None, join_attributes=None)
+        IntersectAreas_archydro(in_from_features, in_to_features, out_intersect_features, {join_attributes})
+        
+        INPUTS:
+         in_from_features (Feature Layer):
+             Input From Layer for Intersect
+         in_to_features (Feature Layer):
+             Input To Layer for Intersect
+         join_attributes {String}:
+             Join Attributes
+        
+        OUTPUTS:
+         out_intersect_features (Feature Layer):
+             Output Intersect Polygon
+    
+    LevelDEM(in_rawdem_raster=None, in_lake_features=None, out_leveldem_raster=None, fillelev_field=None)
+        LevelDEM_archydro(in_rawdem_raster, in_lake_features, out_leveldem_raster, {fillelev_field})
+        
+        INPUTS:
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+         in_lake_features (Feature Layer):
+             Input Lake Polygon
+         fillelev_field {Field}:
+             Fill Elevation Field
+        
+        OUTPUTS:
+         out_leveldem_raster (Raster Layer):
+             Output Level DEM
+    
+    LongestFlowPath(in_drainage_area_features=None, in_flow_direction_raster=None, out_longestflowpath_features=None)
+        LongestFlowPath_archydro(in_drainage_area_features, in_flow_direction_raster, out_longestflowpath_features)
+        
+        INPUTS:
+         in_drainage_area_features (Feature Layer):
+             Input Drainage Area
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+        
+        OUTPUTS:
+         out_longestflowpath_features (Feature Layer):
+             Output Longest Flow Path
+    
+    LongestFlowPathForAdjointCatchments(in_flow_direction_raster=None, in_adjointcatchment_features=None, in_longestflowpathforcatchments_features=None, out_longestflowpathadjcat_features=None)
+        LongestFlowPathForAdjointCatchments_archydro(in_flow_direction_raster, in_adjointcatchment_features, in_longestflowpathforcatchments_features, out_longestflowpathadjcat_features)
+        
+        INPUTS:
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_adjointcatchment_features (Feature Layer):
+             Input Adjoint Catchment
+         in_longestflowpathforcatchments_features (Feature Layer):
+             Input Longest Flow Path Catchment
+        
+        OUTPUTS:
+         out_longestflowpathadjcat_features (Feature Layer):
+             Output Longest Flow Path Adjoint Catchment
+    
+    LongestFlowPathForCatchments(in_catchment_features=None, in_flow_direction_raster=None, out_longestflowpathcat_features=None)
+        LongestFlowPathForCatchments_archydro(in_catchment_features, in_flow_direction_raster, out_longestflowpathcat_features)
+        
+        INPUTS:
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+        
+        OUTPUTS:
+         out_longestflowpathcat_features (Feature Layer):
+             Output Longest Flow Path Catchment
+    
+    LongestFlowPathForSubwatersheds(in_subwatershed_features=None, in_subwatershedpoint_features=None, in_catchment_features=None, in_longestflowpathforcat_features=None, in_flow_direction_raster=None, out_longestflowpath_features=None)
+        LongestFlowPathForSubwatersheds_archydro(in_subwatershed_features, in_subwatershedpoint_features, in_catchment_features, in_longestflowpathforcat_features, in_flow_direction_raster, out_longestflowpath_features)
+        
+        INPUTS:
+         in_subwatershed_features (Feature Layer):
+             Input Subwatershed
+         in_subwatershedpoint_features (Feature Layer):
+             Input Subwatershed Point
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_longestflowpathforcat_features (Feature Layer):
+             Input Longest Flow Path Catchment
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+        
+        OUTPUTS:
+         out_longestflowpath_features (Feature Layer):
+             Output Longest Flow Path
+    
+    LongestFlowPathForWatersheds(in_watershed_features=None, in_watershedpoint_features=None, in_catchment_features=None, in_adjointcatchment_features=None, in_longestflowpathadjcat_features=None, in_drainageline_features=None, in_flow_direction_raster=None, out_longestflowpath_features=None)
+        LongestFlowPathForWatersheds_archydro(in_watershed_features, in_watershedpoint_features, in_catchment_features, in_adjointcatchment_features, in_longestflowpathadjcat_features, in_drainageline_features, in_flow_direction_raster, out_longestflowpath_features)
+        
+        INPUTS:
+         in_watershed_features (Feature Layer):
+             Input Watershed
+         in_watershedpoint_features (Feature Layer):
+             Input Watershed Point
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_adjointcatchment_features (Feature Layer):
+             Input Adjoint Catchment
+         in_longestflowpathadjcat_features (Feature Layer):
+             Input Longest Flow Path Adjoint Catchment
+         in_drainageline_features (Feature Layer):
+             Input Drainage Line
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+        
+        OUTPUTS:
+         out_longestflowpath_features (Feature Layer):
+             Output Longest Flow Path
+    
+    MainFlowPath(in_watershed_features=None, in_watershedpoint_features=None, in_drainageline_features=None, in_catchment_features=None, in_rawdem_raster=None, in_flow_direction_raster=None, in_flow_accumulation_raster=None, number_cells=None, out_mainflowpath_features=None, area_sqkm=None)
+        MainFlowPath_archydro(in_watershed_features, in_watershedpoint_features, in_drainageline_features, in_catchment_features, in_rawdem_raster, in_flow_direction_raster, in_flow_accumulation_raster, number_cells, out_mainflowpath_features, {area_sqkm})
+        
+        INPUTS:
+         in_watershed_features (Feature Layer):
+             Input Watershed
+         in_watershedpoint_features (Feature Layer):
+             Input Watershed Point
+         in_drainageline_features (Feature Layer):
+             Input Drainage Line
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_flow_accumulation_raster (Raster Layer):
+             Input Flow Accumulation Grid
+         number_cells (Double):
+             Number of cells to define small stream threshold
+         area_sqkm {Double}:
+             Area SqKm to define small stream threshold
+        
+        OUTPUTS:
+         out_mainflowpath_features (Feature Layer):
+             Output Main Flow Path
+    
+    MapToExcel(input_excel_file=None)
+        MapToExcel_archydro(input_excel_file)
+        
+        INPUTS:
+         input_excel_file (File):
+             Input Excel File
+    
+    NodeLinkSchemaGeneration(in_SchemaPoly_features=None, in_SchemaJunction_features=None, out_SchemaLink_features=None, out_SchemaNode_features=None)
+        NodeLinkSchemaGeneration_archydro({in_SchemaPoly_features}, in_SchemaJunction_features, out_SchemaLink_features, out_SchemaNode_features)
+        
+        INPUTS:
+         in_SchemaPoly_features {Feature Layer}:
+             Input Schema Polygon
+         in_SchemaJunction_features (Feature Layer):
+             Input Schema Junction
+        
+        OUTPUTS:
+         out_SchemaLink_features (Feature Layer):
+             Output Schema Link
+         out_SchemaNode_features (Feature Layer):
+             Output Schema Node
+    
+    PercentbyZone(Input_Drainage_Area=None, ID_field=None, Category_Raster=None, Category_field=None, Result_Table=None, Snap_Raster=None)
+        PercentbyZone_archydro(Input_Drainage_Area, ID_field, Category_Raster, Category_field, Result_Table, {Snap_Raster})
+        
+        INPUTS:
+         Input_Drainage_Area (Composite Geodataset)
+         ID_field (Field)
+         Category_Raster (Raster Layer)
+         Category_field (Field)
+         Snap_Raster {Raster Layer}
+        
+        OUTPUTS:
+         Result_Table (Table)
+    
+    PointTSValueto3DLine(in_point_features=None, in_line_features=None, in_raster_raster=None, out_line3D_features=None, TransferWaterLevel=None, WaterLevelCheck=None)
+        PointTSValueto3DLine_archydro(in_point_features, in_line_features, {in_raster_raster}, out_line3D_features, {TransferWaterLevel}, {WaterLevelCheck})
+        
+        INPUTS:
+         in_point_features (Feature Layer):
+             Input Point
+         in_line_features (Feature Layer):
+             Input Line
+         in_raster_raster {Raster Layer}:
+             Input Raster
+         TransferWaterLevel {Boolean}:
+             Perform Water Level Check at Confluences
+         WaterLevelCheck {Boolean}:
+             Estimate Water Level on Rivers with zero gauge stations.
+        
+        OUTPUTS:
+         out_line3D_features (Feature Layer):
+             Output Line3D
+    
+    RecomputeFlows(in_flowxml=None, out_flowxml=None, in_xmlconfig=None)
+        RecomputeFlows_archydro(in_flowxml, out_flowxml, {in_xmlconfig})
+        
+        INPUTS:
+         in_flowxml (File):
+             Input Flows XML File
+         in_xmlconfig {File}:
+             Input XML Configuration File
+        
+        OUTPUTS:
+         out_flowxml (File):
+             Output Flows XML File
+    
+    RunHMS(input_hmsfile=None, start_time=None, end_time=None, time_interval=None, hms_run_name=None)
+        RunHMS_archydro(input_hmsfile, start_time, end_time, time_interval, hms_run_name)
+        
+        INPUTS:
+         input_hmsfile (File):
+             Input HMS File
+         start_time (Date):
+             Start Time [mm/dd/yyyy 00:00:00]
+         end_time (Date):
+             End Time [mm/dd/yyyy 00:00:00]
+         time_interval (Long):
+             Time Interval
+         hms_run_name (String):
+             HMS Run Name
+    
+    RunRAS(input_rasfile=None)
+        RunRAS_archydro(input_rasfile)
+        
+        INPUTS:
+         input_rasfile (File):
+             Input RAS File (Current plan will be run!)
+    
+    SDFToXML(input_sdffile=None, out_xml_file=None)
+        SDFToXML_archydro(input_sdffile, out_xml_file)
+        
+        INPUTS:
+         input_sdffile (File):
+             Input SDF File
+        
+        OUTPUTS:
+         out_xml_file (File):
+             Output XML File
+    
+    SelectByWatershedID(WatershedID=None)
+        SelectByWatershedID_archydro(WatershedID)
+        
+        INPUTS:
+         WatershedID (String)
+    
+    SelectUpstreamCatchmentsUsingPreferentialLink(in_catchment_features=None, in_preferentiallink_features=None, overwrite_group=None)
+        SelectUpstreamCatchmentsUsingPreferentialLink_archydro(in_catchment_features, in_preferentiallink_features, {overwrite_group})
+        
+        INPUTS:
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+         overwrite_group {Boolean}:
+             Overwrite Existing GroupID
+    
+    SetBatchTargetLocations(in_dem_raster=None)
+        SetBatchTargetLocations_archydro(in_dem_raster)
+        
+        INPUTS:
+         in_dem_raster (Raster Layer):
+             Input DEM
+    
+    SetFlowDirection(input_edge_features=None, flowdirection_type=None)
+        SetFlowDirection_archydro(input_edge_features;input_edge_features..., flowdirection_type)
+        
+        INPUTS:
+         input_edge_features (Feature Layer):
+             Input Edge Feature Classes
+         flowdirection_type (String):
+             Select Flow Direction
+    
+    SetFlowDirectionUsingPreferentialLink(in_hydroedge_features=None, in_preferentiallink_features=None)
+        SetFlowDirectionUsingPreferentialLink_archydro(in_hydroedge_features, in_preferentiallink_features)
+        
+        INPUTS:
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_preferentiallink_features (Feature Layer):
+             Input Preferential Link
+    
+    SetTargetLocations(in_appconfig=None, in_mapname=None, in_rasterlocation=None, in_vectorlocation=None)
+        SetTargetLocations_archydro(in_appconfig, in_mapname, in_rasterlocation, in_vectorlocation)
+        
+        INPUTS:
+         in_appconfig (String):
+             Application Name
+         in_mapname (String):
+             Input Map Name
+         in_rasterlocation (Workspace):
+             Input Raster Location Workspace
+         in_vectorlocation (Workspace):
+             Input Vector Location Workspace
+    
+    SinkEvaluation(in_dem_raster=None, out_sink_features=None, out_sink_drainage_features=None)
+        SinkEvaluation_archydro(in_dem_raster, out_sink_features, out_sink_drainage_features)
+        
+        INPUTS:
+         in_dem_raster (Raster Layer):
+             Input DEM
+        
+        OUTPUTS:
+         out_sink_features (Feature Layer):
+             Output Sink Polygon
+         out_sink_drainage_features (Feature Layer):
+             Output Sink Drainage Area
+    
+    SinkIdentificationByHEP(in_sinkPoly_features=None, in_hep_features=None)
+        SinkIdentificationByHEP_archydro(in_sinkPoly_features, in_hep_features)
+        
+        INPUTS:
+         in_sinkPoly_features (Feature Layer):
+             Input Sink Polygon
+         in_hep_features (Feature Layer):
+             Input Hydraulic Element Point
+    
+    SinkPrescreen(in_rawdem_raster=None, prescreen_area=None, out_prefildem_raster=None, out_sink_raster=None)
+        SinkPrescreen_archydro(in_rawdem_raster, prescreen_area, out_prefildem_raster, out_sink_raster)
+        
+        INPUTS:
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+         prescreen_area (Double):
+             Minimum drainage area for potential sinks
+        
+        OUTPUTS:
+         out_prefildem_raster (Raster Layer):
+             Output PreFilled DEM
+         out_sink_raster (Raster Layer):
+             Output Sink Grid
+    
+    SinkSelection(in_deranged_poly_features=None, min_depth=None, min_area=None, min_volume=None, min_drainage_area=None, overwrite_selection=None)
+        SinkSelection_archydro(in_deranged_poly_features, {min_depth}, {min_area}, {min_volume}, {min_drainage_area}, {overwrite_selection})
+        
+        INPUTS:
+         in_deranged_poly_features (Feature Layer):
+             Input Deranged Polygon
+         min_depth {Double}:
+             Minimum Depth
+         min_area {Double}:
+             Minimum Area
+         min_volume {Double}:
+             Minimum Volume
+         min_drainage_area {Double}:
+             Minimum Drainage Area
+         overwrite_selection {String}:
+             Overwrite Selection
+    
+    SinkWatershedDelineation(Flow_Direction_Grid=None, Sink_Point_Grid=None, Sink_Point_Feature_Class=None, Output_Sink_Watershed_Grid=None, Output_Sink_Watershed_Feature_Class=None)
+        SinkWatershedDelineation_archydro(Flow_Direction_Grid, Sink_Point_Grid, Sink_Point_Feature_Class, Output_Sink_Watershed_Grid, Output_Sink_Watershed_Feature_Class)
+        
+           Delineate areas draining into sinks (sink watersheds). Create both raster and
+           vector representation of sink watersheds.
+        
+        INPUTS:
+         Flow_Direction_Grid (Raster Layer):
+             Input flow direction grid.
+         Sink_Point_Grid (Raster Layer):
+             Input sink grid (sink points in grid format) for which delineation will be
+             performed.
+         Sink_Point_Feature_Class (Feature Layer):
+             Input sink point feature class. GridID needs to be populated and has to match
+             the grid_code of the sink point grid. HydroID also needs to be populated.
+             HydroID of the sink point will be assigned as SinkID of the resulting sink
+             watershed.
+        
+        OUTPUTS:
+         Output_Sink_Watershed_Grid (Raster Layer):
+             Output sink watershed grid. Default workspace for the output sink watershed
+             grid is the workspace of the input sink point grid. User should not change this
+             target directory (but can change the output grid name). Default name is
+             SinkWshGrid.
+         Output_Sink_Watershed_Feature_Class (Feature Layer):
+             Output sink watershed feature class. Default workspace for the output sink
+             watershed feature class is the workspace of the input sink point feature class.
+             User should not change this target directory (but can change the output feature
+             class name). Default name is SinkWatershed.
+    
+    Slope(in_rawdem_raster=None, out_slope_raster=None, output_measurement=None)
+        Slope_archydro(in_rawdem_raster, out_slope_raster, {output_measurement})
+        
+        INPUTS:
+         in_rawdem_raster (Raster Layer):
+             Input Raw DEM
+         output_measurement {String}:
+             Output measurement
+        
+        OUTPUTS:
+         out_slope_raster (Raster Layer):
+             Output Slope
+    
+    Smooth3DLine(in_line3d_features=None, out_smoothline3d_features=None)
+        Smooth3DLine_archydro(in_line3d_features, out_smoothline3d_features)
+        
+        INPUTS:
+         in_line3d_features (Feature Layer):
+             Input Line 3D
+        
+        OUTPUTS:
+         out_smoothline3d_features (Feature Layer):
+             Output Smooth Line 3D
+    
+    StationElevationCharacterization(in_line_features_3d=None, measure_format=None, out_se_table=None, zfactor=None, use_m=None, overwrite_se=None)
+        StationElevationCharacterization_archydro(in_line_features_3d, measure_format;measure_format..., out_se_table, {zfactor}, {use_m}, {overwrite_se})
+        
+        INPUTS:
+         in_line_features_3d (Feature Layer):
+             Input Line 3D
+         measure_format (String):
+             Measure Format
+         zfactor {Double}:
+             Z Factor
+         use_m {Boolean}:
+             Use M Value from Line
+         overwrite_se {Boolean}:
+             Overwrite Existing SE Values
+        
+        OUTPUTS:
+         out_se_table (Table View):
+             Output Station Elevation Table
+    
+    StoreAreaOutletsbyDrainagePoint(in_area_features=None, in_hydrojunction_features=None, in_drainagepoint_features=None, search_tolerance=None)
+        StoreAreaOutletsbyDrainagePoint_archydro(in_area_features, in_hydrojunction_features, in_drainagepoint_features, search_tolerance)
+        
+        INPUTS:
+         in_area_features (Feature Layer):
+             Input Area
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         in_drainagepoint_features (Feature Layer):
+             Input Drainage Point
+         search_tolerance (Linear unit):
+             Search Tolerance
+    
+    StoreAreaOutletsbyJunctionIntersect(in_area_features=None, in_hydrojunction_features=None, outletinarea=None, outletnearboundary=None, search_tolerance=None, compareupdownedges=None, checkedgesinarea=None)
+        StoreAreaOutletsbyJunctionIntersect_archydro(in_area_features, in_hydrojunction_features, {outletinarea}, {outletnearboundary}, {search_tolerance}, {compareupdownedges}, {checkedgesinarea})
+        
+        INPUTS:
+         in_area_features (Feature Layer):
+             Input Area
+         in_hydrojunction_features (Feature Layer):
+             Input Hydro Junction
+         outletinarea {Boolean}:
+             Outlet within Area
+         outletnearboundary {Boolean}:
+             Outlet near Boundary
+         search_tolerance {Linear unit}:
+             Search Tolerance
+         compareupdownedges {Boolean}:
+             Compare Upstream Downstream Edges
+         checkedgesinarea {Boolean}:
+             Check Edges within Area
+    
+    StoreAreaOutletsbyNextDownArea(in_area_features=None)
+        StoreAreaOutletsbyNextDownArea_archydro(in_area_features)
+        
+        INPUTS:
+         in_area_features (Feature Layer):
+             Input Area
+    
+    StoreFlowDirection(input_edge_features=None)
+        StoreFlowDirection_archydro(input_edge_features;input_edge_features...)
+        
+        INPUTS:
+         input_edge_features (Feature Layer):
+             Input Edge Feature Classes
+    
+    StreamDefinition(in_flowaccumulation_raster=None, number_cells=None, out_stream_raster=None, area_sqkm=None)
+        StreamDefinition_archydro(in_flowaccumulation_raster, number_cells, out_stream_raster, {area_sqkm})
+        
+        INPUTS:
+         in_flowaccumulation_raster (Raster Layer):
+             Input Flow Accumulation Grid
+         number_cells (Double):
+             Number of cells to define stream
+         area_sqkm {Double}:
+             Area SqKm to define stream
+        
+        OUTPUTS:
+         out_stream_raster (Raster Layer):
+             Output Stream Grid
+    
+    StreamSegmentation(in_stream_raster=None, in_flow_direction_raster=None, out_streamlink_raster=None, in_sink_watershed_raster=None, in_sink_link_raster=None)
+        StreamSegmentation_archydro(in_stream_raster, in_flow_direction_raster, out_streamlink_raster, {in_sink_watershed_raster}, {in_sink_link_raster})
+        
+        INPUTS:
+         in_stream_raster (Raster Layer):
+             Input Stream Grid
+         in_flow_direction_raster (Raster Layer):
+             Input Flow Direction Grid
+         in_sink_watershed_raster {Raster Layer}:
+             Input Sink Watershed Grid
+         in_sink_link_raster {Raster Layer}:
+             Input Sink Link Grid
+        
+        OUTPUTS:
+         out_streamlink_raster (Raster Layer):
+             Output Stream Link Grid
+    
+    StreamWSEFromPointWSEMeasurements(Point=None, TimeSeries=None, Variable=None, TSTime=None, Line=None, Raster=None, Line_Raster=None, Line3D=None)
+        StreamWSEFromPointWSEMeasurements_archydro(Point, TimeSeries, Variable, TSTime, Line, Raster, Line_Raster, Line3D)
+        
+        INPUTS:
+         Point (Feature Layer)
+         TimeSeries (Table View)
+         Variable (String)
+         TSTime (String)
+         Line (Feature Layer)
+         Raster (Raster Layer)
+        
+        OUTPUTS:
+         Line_Raster (Raster Layer)
+         Line3D (Feature Layer)
+    
+    StreamstatsGlobalParameters(in_globalwatershed_features=None, in_globalwatershedpoint_features=None, input_parameters=None, out_paramsxml=None, out_paramshtm=None, in_xmlconfig=None, out_vectorlocation=None)
+        StreamstatsGlobalParameters_archydro(in_globalwatershed_features, in_globalwatershedpoint_features, input_parameters;input_parameters..., out_paramsxml, out_paramshtm, {in_xmlconfig}, {out_vectorlocation})
+        
+        INPUTS:
+         in_globalwatershed_features (Feature Layer):
+             Input Global Watershed
+         in_globalwatershedpoint_features (Feature Layer):
+             Input Global Watershed Point
+         input_parameters (String):
+             Input Parameters
+         in_xmlconfig {File}:
+             Input XML Configuration File
+        
+        OUTPUTS:
+         out_paramsxml (File):
+             Output Parameters XML File
+         out_paramshtm (File):
+             Output Parameters Report File
+         out_vectorlocation {Workspace}:
+             Target Vector Location Workspace
+    
+    StreamstatsGlobalWatershedDelineation(in_batchpoint_features=None, in_xmlconfig=None, clear_features=None, out_globalwatershed_features=None, out_globalwatershedpoint_features=None)
+        StreamstatsGlobalWatershedDelineation_archydro(in_batchpoint_features, {in_xmlconfig}, {clear_features}, out_globalwatershed_features, out_globalwatershedpoint_features)
+        
+        INPUTS:
+         in_batchpoint_features (Feature Layer):
+             Input Batch Point
+         in_xmlconfig {File}:
+             Input XML Configuration File
+         clear_features {Boolean}:
+             Clear Existing Features
+        
+        OUTPUTS:
+         out_globalwatershed_features (Feature Layer):
+             Output Global Watershed
+         out_globalwatershedpoint_features (Feature Layer):
+             Output Global Watershed Point
+    
+    SyncHydroID(InWorkspaceSDE=None, InWorkspaceGDB=None)
+        SyncHydroID_archydro(InWorkspaceSDE, InWorkspaceGDB)
+        
+           Child workspace is a workspace whose HydroID and RelatedID values will be
+           updated based on   (1) current last HydroID value of the parent workspace
+           (WorkspaceSDE)   (2) last HydroID value of the parent workspace (WorkspaceSDE)
+           when workspace is checked out. Before any editing is done on the checked out
+           workspace, the LASTID in ApUniqueID is the same as the LASTID in the
+           APUNIQUEIDWHENCHKOUT  table.  All the HYDROID and RelatedIDs &gt; LASTID when
+           checked out, on all the tables will be shifted by DID = LASTID(CurrentSDE) -
+           LASTID(In  APUNIQUEIDWHENCHKOUT )
+        
+        INPUTS:
+         InWorkspaceSDE (Workspace):
+             Input parent workspace, whose last HydroID will be used to Sync the HydroID
+             and RelatedIDs in the WorkspaceGDB  Parent workspace is a workspace that the
+             data from the WorkspaceGDB are to be checked in (loaded to)
+         InWorkspaceGDB (Workspace):
+             input workspace (checked out workspace, WorkspaceGDB) <P /><P /> <SPAN />
+    
+    TINtoRaster(Input_TIN=None, Output_Raster=None, Output_Data_Type=None, Method=None, Sampling_Distance=None, Z_Factor=None)
+        TINtoRaster_archydro(Input_TIN, Output_Raster, {Output_Data_Type}, {Method}, {Sampling_Distance}, {Z_Factor})
+        
+        INPUTS:
+         Input_TIN (TIN Layer)
+         Output_Data_Type {String}
+         Method {String}
+         Sampling_Distance {String}
+         Z_Factor {Double}
+        
+        OUTPUTS:
+         Output_Raster (Raster Dataset)
+    
+    TerrainProfile(ProfileLineIn=None, ProfileLineOut=None, outjpg=None, outxml=None, in_xmlconfig=None)
+        TerrainProfile_archydro(ProfileLineIn, ProfileLineOut, outjpg, outxml, {in_xmlconfig})
+        
+        INPUTS:
+         ProfileLineIn (Feature Layer):
+             Input ProfileLineIn
+         in_xmlconfig {File}:
+             Input XML Configuration File
+        
+        OUTPUTS:
+         ProfileLineOut (Feature Layer):
+             Output ProfileLineOut
+         outjpg (File):
+             Output jpg File
+         outxml (File):
+             Output xml File
+    
+    TransformXML(input_xmlfile=None, input_xslfile=None, output_file=None)
+        TransformXML_archydro(input_xmlfile, input_xslfile, output_file)
+        
+        INPUTS:
+         input_xmlfile (File):
+             Input XML File for Transform
+         input_xslfile (File):
+             Input XSL File for Transform
+        
+        OUTPUTS:
+         output_file (File):
+             Output File (With Extension)
+    
+    UngroupSelectedCatchments(in_catchment_features=None)
+        UngroupSelectedCatchments_archydro(in_catchment_features)
+        
+        INPUTS:
+         in_catchment_features (Feature Layer):
+             Input Catchment
+    
+    UpdateApUniqueIDTable(WorkspaceGDB=None, WorkspaceSDE=None)
+        UpdateApUniqueIDTable_archydro(WorkspaceGDB, WorkspaceSDE)
+        
+        INPUTS:
+         WorkspaceGDB (Workspace)
+         WorkspaceSDE (Workspace):
+             Target workspace whose ApUniqueID tables' LASTID field will be updated based
+             on that in the source workspace.
+    
+    UpdateHydroID(WorkspaceSDE=None, WorkspaceGDB=None)
+        UpdateHydroID_archydro(WorkspaceSDE, WorkspaceGDB)
+        
+           Given a parent workspace (WorkspaceSDE) and a child workspace (WorkspaceGDB),
+           update HydroID (and RelatedID) values of a child GDB so that its HydroID values
+           are consistent with those in the parent workspace (WorkspaceSDE)
+        
+        INPUTS:
+         WorkspaceSDE (Workspace):
+             Input parent workspace, whose last HydroID will be used as the base to update
+             the HydroID and RelatedIDs in the WorkspaceGDB  Parent workspace is a workspace
+             that the data from the WorkspaceGDB are to be imported to ((loaded to)
+         WorkspaceGDB (Workspace):
+             input child workspace  Child workspace is a workspace whose HydroID and
+             RelatedID values will be updated based on the last HydroID value of the parent
+             workspace (WorkspaceSDE)  <SPAN />
+    
+    UpdatePreferentialNodeLink(in_catchment_features=None, in_sinkpoint_features=None, in_hydroedge_features=None, in_drainageboundary_features=None, in_terrain_raster=None, out_preferentialnode_features=None, out_preferentiallink_features=None)
+        UpdatePreferentialNodeLink_archydro(in_catchment_features, in_sinkpoint_features, in_hydroedge_features, in_drainageboundary_features, in_terrain_raster, out_preferentialnode_features, out_preferentiallink_features)
+        
+        INPUTS:
+         in_catchment_features (Feature Layer):
+             Input Catchment
+         in_sinkpoint_features (Feature Layer):
+             Input Sink Point
+         in_hydroedge_features (Feature Layer):
+             Input Hydro Edge
+         in_drainageboundary_features (Feature Layer):
+             Input Drainage Boundary
+         in_terrain_raster (Raster Layer):
+             Input DEM
+        
+        OUTPUTS:
+         out_preferentialnode_features (Feature Layer):
+             Output Preferential Node
+         out_preferentiallink_features (Feature Layer):
+             Output Preferential Link
+    
+    UpdateRASFlow(input_rasfile=None, in_xscutline_features=None, input_hmsFile=None, hms_run_name=None, flow_type=None)
+        UpdateRASFlow_archydro(input_rasfile, in_xscutline_features, input_hmsFile, hms_run_name, {flow_type})
+        
+        INPUTS:
+         input_rasfile (File):
+             Input RAS File
+         in_xscutline_features (Feature Layer):
+             Input XS Cut Lines
+         input_hmsFile (File):
+             Input HMS File
+         hms_run_name (String):
+             HMS Run Name
+         flow_type {String}:
+             Flow Type
+    
+    UpdateTSValueonPoints(in_point_features=None, in_table_ts=None, VARID=None, TSTime=None)
+        UpdateTSValueonPoints_archydro(in_point_features, in_table_ts, VARID, TSTime)
+        
+        INPUTS:
+         in_point_features (Feature Layer):
+             Input Point
+         in_table_ts (Table View):
+             Input Time Series Table
+         VARID (String):
+             Variable
+         TSTime (String):
+             TSTime
+    
+    WeightedAverage(in_from_features=None, from_transfer_field=None, in_to_features=None, in_intersect_features=None)
+        WeightedAverage_archydro(in_from_features, from_transfer_field, in_to_features, in_intersect_features)
+        
+        INPUTS:
+         in_from_features (Feature Layer):
+             Input From Layer for Intersect
+         from_transfer_field (Field):
+             From Transfer Value Field
+         in_to_features (Feature Layer):
+             Input To Layer for Intersect
+         in_intersect_features (Feature Layer):
+             Input Intersect Polygon
+
+DATA
+    __alias__ = 'archydro'
+    __all__ = ['GenerateFNodeTNode', 'BasicDendriticTerrainProcessing', 'D...
+
+
